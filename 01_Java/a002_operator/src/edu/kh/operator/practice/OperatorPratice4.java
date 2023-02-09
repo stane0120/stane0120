@@ -21,8 +21,7 @@ public class OperatorPratice4 {
 		
 		System.out.printf("합계 : %d \n", input1+input2+input3);
 		System.out.printf("평균 : %d \n", (input1+input2+input3)/3);
-		String result = input1 >= 40? input2 >= 40? input3 >= 40? (input1+input2+input3)/3? " 합격. " 
-				               : " 불합격. " ;
+		String result = input1 >= 40 && input2 >= 40 && input3 >= 40 && (input1+input2+input3)/3.0 >= 60? "합격." : "불합격." ;
 		
 		System.out.println(result);
 	}
