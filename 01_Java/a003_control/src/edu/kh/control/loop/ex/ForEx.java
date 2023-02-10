@@ -311,11 +311,11 @@ public class ForEx {
         	System.out.print("단 입력 : ");
             int input1 = sc.nextInt();
             
-            if(input1 <= 9 && input1 >= 2) { // 3
-            	for(int i=9 ; i >= 1 ; i--)
-            		System.out.printf("%d x %d =  %2d \n", input1, i, input1*i );
+            if(input1 < 2 || input1 > 9) { 
+            		System.out.println("잘못 입력 하셨습니다.");
             } else {
-        		System.out.println("잘못 입력 하셨습니다.");
+            	for(int i = 1 ; i <= 9 ; i++)
+        		System.out.printf("%d x %d =  %2d \n", input1, i, input1*i );
             
         }
     }	
