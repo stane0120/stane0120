@@ -23,7 +23,7 @@ public class ConditionPractice {
 
 }
 	
-}
+
   
 	public void practice2() {
 	    Scanner sc = new Scanner(System.in);
@@ -39,13 +39,15 @@ public class ConditionPractice {
 		System.out.println("영어점수 : ");
 		int input3 = sc.nextInt();
 	    
-	int num = input1+input2+input3
+	
 	int avg = (input1+input2+input3)/3;
 	
 	String result;
 		
 		if(input1 >= 40 && input2 >= 40 && input3 >= 40 && avg >= 60) { 
-			result = 
+			
 		
 		}
 
+}
+	}

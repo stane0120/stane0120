@@ -133,19 +133,71 @@ public class ForPractice {
 	
 	public void practice8() {
 	Scanner sc = new Scanner(System.in);
-	System.out.println("정수 입력 : ");
+	System.out.print("정수 입력 : ");
 	int input = sc.nextInt();
 	
-    for(int x=input ; x>=1 ; x--) { // x=1,2,3
+    for(int row=input ; row>=1 ; row--) { // x=1,2,3
     	
-    	for(int i=x ; i>=1 ; i--) {
-    		System.out.print(i);
-    	}
+    	for(int col=row ; col>=1 ; col--) {
+    		System.out.print("*");
+    	}   	
        System.out.println(); // 개행
-       
     }
 }
+	
+	public void practice11() {
+	Scanner sc = new Scanner(System.in);
+	
+	System.out.print("정수 입력 : ");
+	int input = sc.nextInt();
+
+	
+	for(int row=1 ; row<=input ; row++) {
+		
+		for(int col=input-row ; col>=1 ; col--) {
+			System.out.print(" ");
+		}
+		
+		for(int col=1 ; col<=row * 2 -1; col++) {
+			System.out.print("*");
+		}
+		
+		System.out.println();
+	}
+	}
+	
+	
+	
+	
+	
+	
+	public void practice12() {
+	Scanner sc = new Scanner(System.in);
+	System.out.print("정수 입력 : ");
+	int input = sc.nextInt();
+	
+	
+	for(int row=1 ; row<=input ; row++) {
+		
+		for(int col=1; col<=input ; col++) {
+			
+			
+ 	if(row==1 || row==input || col==1 || col==input) {
+			System.out.print("*");
+		}else {
+	        System.out.print(" ");
+		} 
+	
+	    System.out.println(); //개행
+	
+	}
+	}
 }
+}
+
+
+	
+
 
 
 
