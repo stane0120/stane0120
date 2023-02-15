@@ -5,7 +5,7 @@ public class BasicRun {
 	
 	public static void main(String[] args) {
 		
-		// Java에서의 object == 클래스의 정의된 애용을 토대로
+		// Java에서의 object == 클래스의 정의된 내용을 토대로
 		//                      new 연산자를 통해 메모리에 생성되는 것
 		
 		// 국민 객체 생성
