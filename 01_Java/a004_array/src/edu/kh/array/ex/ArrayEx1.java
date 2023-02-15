@@ -270,7 +270,7 @@ public class ArrayEx1 {
                 if(scoreArr[i] < min) {
                 	// 기존 max(최대값)보다 현재 배열 요소의 값이 더 큰 경우
                 	min = scoreArr[i];
-                	minIndex = i; // 최고점 인덱스
+                	minIndex = i; // 최저점 인덱스
             }
 			
             if(scoreArr[i] < min) {
