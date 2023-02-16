@@ -140,14 +140,44 @@ public class ArrayPractice {
 							
 			System.out.println("발생한 난수 : " + arr);
 			}
+
 			
-			public void ex11() {
-				
-				
-				
+			public void ex16() {
+				int[][] arr = new int[4][4];
+		        int number = 1;
+		        
+		        for(int row=0 ; row<arr.length ; row++) { // 행 반복        	
+		        	for(int col=0 ; col<arr[0].length ; col++) { // 열 반복
+		        		
+		        		arr[row][col] = (number) ;
+		        		arr[row][col] = (number) ;
+		        		
+		        		number++;
+		        		
+		        		System.out.print(arr[row][col] + " ");       		
+		        	}             	   
+		           System.out.println();
 			}
 			
+				}
 			
+			public void ex17() {				
+				int[][] arr = new int[4][4];
+	            int number = 17;
+	        
+	        for(int row=0 ; row>arr.length ; row--) { // 행 반복        	
+	        	for(int col=0 ; col>arr[0].length ; col--) { // 열 반복
+	        		
+	        		arr[row][col] = (number) ;
+	        		arr[row][col] = (number) ;
+	        		
+	        		number++;
+	        		
+	        		System.out.print(arr[row][col] + " ");       		
+	        	}             	   
+	           System.out.println();
+}
+			}
 }
 			
 
