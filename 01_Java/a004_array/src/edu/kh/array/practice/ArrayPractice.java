@@ -48,12 +48,115 @@ public class ArrayPractice {
 			
 			System.out.print(input + " ");
 		}
-		
-		
-		
 	}
 	
+			public void ex4() {
+				
+				int[] arr;
+				Scanner sc = new Scanner(System.in);
+				int[] input = new int[5];
+				for(int i=0 ; i<input.length ; i++) {
+					System.out.printf("입력 %d : ", i+1);
+					
+					input[i] = sc.nextInt();
+					
+					}
+
+				
+
+			}
+		
+			public void ex5() {	
+				
+				
+			}
+	
+				
+			public void ex6() {	
+				Scanner sc = new Scanner(System.in);
+				
+				System.out.print("정수 : ");
+				int size = sc.nextInt();
+				
+				int[] scoreArr = new int[size];
+				
+				int sum = 0;
+				for(int i=0 ; i<scoreArr.length ; i++) {	
+			    	System.out.printf("배열 %d번째 인덱스에 넣을 값 : ", i); // 1 2 3
+			    	scoreArr[i] = sc.nextInt();
+			    	sum += scoreArr[i];
+			    			
+			   	}				    
+					System.out.printf("총 합 : " + sum);
+			}
+				
+				
+			
+				
+			
+			public void ex7() {	
+			
+				Scanner sc = new Scanner(System.in);
+				System.out.print("주민등록번호(-포함) : ");
+				char size = sc.next().charAt(0);
+				
+				char[] scoreArr = new char[size];
+				
+				if(size > 8) {
+					System.out.printf("*" + scoreArr);
+				} else {
+					System.out.printf(" " + scoreArr);
+				}
+				
+				System.out.println(" " + size);
+			}
+			public void ex8() {
+				
+				
+			}
+
+			public void ex9() {	
+				
+				int[] arr;
+				arr = new int[10];
+				
+				for(int i=0 ; i<arr.length ; i++) {
+					arr[i] = (int)(Math.random() * arr.length);
+				}
+								
+				System.out.println("발생한 난수 : " + arr);
+				
+			}
+			
+			public void ex10() {
+				
+			
+			int[] arr;
+			arr = new int[10];
+			
+			for(int i=0 ; i<10 ; i++) {
+				arr[i] = (int)(Math.random() * arr.length);
+			}
+							
+			System.out.println("발생한 난수 : " + arr);
+			}
+			
+			public void ex11() {
+				
+				
+				
+			}
+			
+			
 }
+			
+
+		
+		
+		
+	
+	
+
 		
 
 
