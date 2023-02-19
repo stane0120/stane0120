@@ -150,7 +150,7 @@ public class ArrayEx2 {
 				arr[row][col] = ch; // 요소에 문자 대입
 				ch++; // 다음 문자로 증가
 				
-				System.out.print(arr[row][col] + " "); // 저장된 알바펫 출력
+				System.out.print(arr[row][col] + " "); // 저장된 알파벳 출력
 			}
 			
 			System.out.println();

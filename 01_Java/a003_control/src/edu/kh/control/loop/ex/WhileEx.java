@@ -122,7 +122,7 @@ public class WhileEx {
 	// do ~ while문 기초 사용법
 	public void ex3() {
 		
-		// do ~ whilr문
+		// do ~ while문
 		// - 최초 1회를 무조건 수행하는 반복문
 		//   (최소 1회 이상 반복을 보장하는 반복문)
 		

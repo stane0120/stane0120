@@ -4,7 +4,7 @@ public class OperatorEx3 {
 
 	public static void main(String[] args) {
 		
-		// 논리 연산자 : %%(AND), ||(OR)
+		// 논리 연산자 : &&(AND), ||(OR)
 		
 		
 		// &&(AND) 연산자 : 둘 다 true이면 true, 나머진 false
