@@ -38,7 +38,7 @@ public class MethodExService {
 		}
 		
 		// return : 반환, 돌아가다
-	    // -> 호출한 위리초 돌아감
+	    // -> 호출한 위치로 돌아감
 		// -> 돌아갈 때 가져갈 값이 있으면
 		// return 옆에 작성
 		return arr;
