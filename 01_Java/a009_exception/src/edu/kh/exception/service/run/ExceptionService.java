@@ -27,7 +27,7 @@ public class ExceptionService {
 		// 왜 빨간줄이 뜰까??
 		// - readLine() 메서드는 IOException 이라고 하는 예외를
 		//   발생시킬(던질) 가능성이 있기 때문에
-		//   그 상황에 대한 대비책(예외처리)를 하라고 경고하는 것
+		//   그 상황에 대한 대비책(예외처리)을 하라고 경고하는 것
 		
 	
 		System.out.println("입력값 : " + input);
@@ -214,7 +214,7 @@ public class ExceptionService {
 		int score = sc.nextInt();		
 		
 		if(score < 0 || score > 100) {
-			// 사용자 정의 예오 강제 발생
+			// 사용자 정의 예외 강제 발생
 //			throw new ScoreInputException(); // 기본 생성자
 			throw new ScoreInputException("0~100사이 범위 초과");
 		}
