@@ -47,7 +47,7 @@ public class UserService {
 	}
 	
 	
-	// 5. 회원 정보 수정ㅇ
+	// 5. 회원 정보 수정
 	public boolean userUpdate(String userName, char userGender, String userPw) {
 		
 		// 비밀번호 일치 여부 확인
