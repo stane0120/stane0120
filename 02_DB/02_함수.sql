@@ -94,7 +94,7 @@ FROM NATIONAL;
 
 -- <숫자 관련 함수>
 
--- MOD(숫자 | 컬럼명, 숫자 | 커럼명) : 나머지 값 반환
+-- MOD(숫자 | 컬럼명, 숫자 | 컬럼명) : 나머지 값 반환
 SELECT EMP_NAME, MOD(SALARY, 1000000)
 FROM EMPLOYEE;
 
@@ -327,7 +327,6 @@ FROM EMPLOYEE;
 -- 기존에 받았던 사원은 기존 보너스 + 0.2로 변경
 SELECT EMP_NAME, BONUS, NVL2(BONUS, BONUS + 0.2, 0.3) "변경된 BONUS"
 FROM EMPLOYEE;
-
 
 
 
