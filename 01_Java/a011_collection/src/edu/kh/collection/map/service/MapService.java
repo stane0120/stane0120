@@ -105,7 +105,7 @@ public class MapService {
 				for(String key : member.keySet()) {
 					System.out.println(key + " : " + member.get(key));
 					
-				} else {	
+				}  	
 					System.out.println("비밀번호가 일치하지 않습니다");
 				}
 						
@@ -115,4 +115,4 @@ public class MapService {
 		
 	}
 	}
-}
+

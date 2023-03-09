@@ -3,7 +3,7 @@ package edu.kh.io.dto;
 import java.io.Serializable;
 
 // Serializable
-// -> 직렬화가 될 수 있는 객체가 상속 받는 인터페이ㅡ
+// -> 직렬화가 될 수 있는 객체가 상속 받는 인터페이스
 // --> ObjectOutputStream이 객체를 내보낼 때
 //    해당 인터페이스를 상속 받은 객체인 경우에만 직렬화 작업 진행
 
