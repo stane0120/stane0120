@@ -4,7 +4,7 @@ public interface KH { // 인터페이스(접점)
 	
 	// 상수형 필드 (public static final)만 작성 가능
 	
-	/* 인터페이스는 무조건 상수형 필드만 잦ㄱ성 가능하기 떄문에
+	/* 인터페이스는 무조건 상수형 필드만 작성성 가능하기 떄문에
 	 * 상수를 나타내는 키워드 public statc final을 생략해도
 	 * 작성된걸로 인식된다
 	 * == 인터페이스 필드는 묵시적(암묵적)으로 public static final이다
@@ -15,7 +15,7 @@ public interface KH { // 인터페이스(접점)
 	
 	// 추상 메서드
 	// - 인터페이스는 추상 클래스의 변형체로
-	//   모든 메서드가 public abstrat (추상 메서드) 이다.	
+	//   모든 메서드가 public abstract (추상 메서드) 이다.	
 	// == 인터페이스의 모든 메서드는 묵시적으로 public abstract(추상 메서드)
 	
 	// 단, default 메서드, static 메서드는 abstract가 아님.
