@@ -43,7 +43,7 @@ public void fileSave() {
 		objOut.writeObject(new Book("자바를 정복하자", 35000)); // 객체 출력스트림 생성
 	} catch(FileNotFoundException e) {
 		e.printStackTrace();
-	} catch (IOException e) {
+	} catch (IOException e) { // 객체를 출력하는 부분
 		e.printStackTrace();
 	} finally {
 		try {
