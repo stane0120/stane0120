@@ -22,10 +22,53 @@ WHERE HIRE_DATE = (SELECT HIRE_DATE
   AND SALARY > (SELECT MAX(SALARY)
                 FROM EMPLOYEE
                 WHERE JOB_NAME = JOB_NAME);
-                             
+               
+               
+-- 3번
+SELECT EMP_ID, EMP_NAME, DEPT_ID, JOB_CODE, DEPT_TITLE, JOB_NAME
+FROM EMPLOYEE
+NATURAL JOIN JOB
+JOIN DEPARTMENT ON(DEPT_CODE = DEPT_ID)
+WHERE (DEPT_CODE, JOB_CODE) = (SELECT DEPT_CODE, JOB_CODE
+                                FROM EMPLOYEE
+                                WHERE EMP_NAME = '노옹철')
+AND EMP_NAME != '노옹철';              
+               
+-- 4번
+SELECT EMP_ID, EMP_NAME, DEPT_CODE, JOB_CODE, HIRE_DATE
+FROM EMPLOYEE
+WHERE (DEPT_CODE, JOB_CODE) = (SELECT DEPT_CODE, JOB_CODE
+                                FROM EMPLOYEE
+                                WHERE EXTRACT(YEAR FROM HIRE_DATE) = 2000);                             
 
 
-              
+-- 5번
+SELECT EMP_ID, EMP_NAME, DEPT_CODE, MANAGER_ID, EMP_NO, HIRE_DATE
+FROM EMPLOYEE
+WHERE (DEPT_CODE, MANAGER_ID)
+    = (SELECT DEPT_CODE, MANAGER_ID
+       FROM EMPLOYEE
+       WHERE SUBSTR(EMP_NO, 8, 1) = '2'
+       AND SUBSTR(EMP_NO, 1, 2) = '77');
+      
+      
+
+-- 6번
+SELECT EMP_ID, EMP_NAME,NVL(DEPT_TITLE, '소속없음'), JOB_NAME, HIRE_DATE, DEPT_CODE
+FROM EMPLOYEE MAIN
+LEFT JOIN DEPARTMENT ON (DEPT_CODE = DEPT_ID)
+JOIN JOB USING (JOB_CODE)
+WHERE (DEPT_CODE, HIRE_DATE) IN (SELECT DEPT_CODE, MIN(HIRE_DATE) FROM EMPLOYEE
+                                 WHERE ENT_YN = 'N'
+                                 GROUP BY DEPT_CODE)
+                                 ORDER BY HIRE_DATE;      
+      
+      
+-- 7번
+SELECT EMP_ID, EMP_NAME, JOB_NAME, SALARY
+FROM EMPLOYEE; 
+JOIN 
+                               
 
 
 
