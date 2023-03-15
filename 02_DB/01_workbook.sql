@@ -14,16 +14,14 @@ AND EMP_NAME != '전지연';
 -- 2번
 SELECT EMP_ID, EMP_NAME, PHONE, SALARY, JOB_NAME
 FROM EMPLOYEE
-NATURAL JOIN JOB
-WHERE HIRE_DATE = (SELECT HIRE_DATE
+JOIN JOB USING(JOB_CODE)
+WHERE SALARY > ANY (SELECT SALARY
                     FROM EMPLOYEE
-                    WHERE EXTRACT(YEAR FROM HIRE_DATE) > 2000)
-                             
-  AND SALARY > (SELECT MAX(SALARY)
-                FROM EMPLOYEE
-                WHERE JOB_NAME = JOB_NAME);
-               
-               
+                    JOIN JOB USING(JOB_CODE)
+                    WHERE JOB_NAME =(SELECT HIRE_DATE
+                                     FROM EMPLOYEE
+                                     WHERE EXTRACT(YEAR FROM HIRE_DATE) > 2000));
+                                                
 -- 3번
 SELECT EMP_ID, EMP_NAME, DEPT_ID, JOB_CODE, DEPT_TITLE, JOB_NAME
 FROM EMPLOYEE
@@ -65,10 +63,24 @@ WHERE (DEPT_CODE, HIRE_DATE) IN (SELECT DEPT_CODE, MIN(HIRE_DATE) FROM EMPLOYEE
       
       
 -- 7번
-SELECT EMP_ID, EMP_NAME, JOB_NAME, SALARY
-FROM EMPLOYEE; 
-JOIN 
-                               
+SELECT EMP_ID, EMP_NAME, JOB_NAME,
+ROUND(MONTHS_BETWEEN(SYSDATE,TO_DATE(SUBSTR(EMP_NO, 1, 6),'RRMMDD'))/12) "나이",
+TO_CHAR((SALARY + (SALARY * NVL(BONUS, 0)))*12, 'L999,999,999')"보너스 포함 연봉"
+FROM EMPLOYEE MAIN
+JOIN JOB J ON (MAIN.JOB_CODE = J.JOB_CODE)
+WHERE EMP_NO = (SELECT MAX(EMP_NO)
+                FROM EMPLOYEE SUB
+                WHERE MAIN.JOB_CODE = SUB.JOB_CODE)
+ORDER BY 나이 DESC;
+
+
+
+
+
+
+
+
+
 
 
 
