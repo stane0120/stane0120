@@ -24,6 +24,23 @@ public class Employee {
 	   
 	   
 
+	public Employee(String empName, String empNo, String email, String phone, int salary, String deptCode,
+			String jobCode, String salLevel, double bonus, int managerId) {
+		this.empName = empName;
+		this.empNo = empNo;
+		this.email = email;
+		this.phone = phone;
+		this.salary = salary;
+		this.deptCode = deptCode;
+		this.jobCode = jobCode;
+		this.salLevel = salLevel;
+		this.bonus = bonus;
+		this.managerId = managerId;
+	}
+
+
+
+
 	public Employee(int empId, String empName, String phone, String departmentTitle, String jobName) {
 		this.empId = empId;
 		this.empName = empName;

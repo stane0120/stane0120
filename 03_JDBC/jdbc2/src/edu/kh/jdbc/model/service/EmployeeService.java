@@ -97,8 +97,111 @@ public class EmployeeService {
 
 		return empList;
 	}
+
+
+	
+    /** 급여 범위 내 사원 정보 조회 서비스
+     * @param min
+     * @param max
+     * @return empList
+     */
+	public List<Employee> selectSalary(int min, int max) throws SQLException {
+		
+		// 1. Connection 생성
+		Connection conn = getConnection();
+		
+		// 2. DAO 메서드 호출 후 결과 반환
+		List<Employee> empList = dao.selectSalary(conn, min, max);
+		
+		// 3. Connection 반환
+		close(conn);
+		
+		// 4. 결과 반환		
+		return empList;
+	}
+	
+	/**
+	 * @param emp
+	 * @return
+	 * @throws SQLException
+	 */
+	public int insertEmployee(Employee emp) throws SQLException {
+		
+		// 1. 커넥션 생성
+		Connection conn = getConnection();
+		
+		// 2. DAO 메서드 호출 후 결과 반환 받기
+		int result = dao.insertEmployee(conn, emp);
+		
+		// DAO에서 DML(INSERT) 수행
+		// -> 트랜잭션에 임시 저장
+		// -> 수행 결과에 따라 commit, rollback 지정
+		
+		// 3. 트랜잭션 제어 처리
+		if(result > 0) // 삽입 성공 시
+		    commit(conn);		
+		else  // 삽입 실패 시
+			rollback(conn);
+		
+		// 4. 커넥션 반환
+		close(conn);
+		
+		// 5. 결과 반환
+		return result;
+	}
+
+
+    /** 회원 정보 수정 서비스
+     * @param emp
+     * @return
+     * @throws SQLException
+     */
+	public int updateEmployee(Employee emp) throws SQLException {
+         
+		// 1. 커넥션 생성
+		Connection conn = getConnection();
+		
+		// 2. DAO 메서드 호출 후 결과 반환 받기
+		int result = dao.updateEmployee(conn, emp);
+		
+		// 3. 트랜잭션 제어 처리
+		if(result > 0) commit(conn);
+		else           rollback(conn);
+				
+		// 4. 커넥션 반환
+		close(conn);
+		
+		// 5. 결과 반환
+		return result;
+	}
+
+
+
+	/** 사원 퇴사 처리 서비스
+	 * @param conn
+	 * @param input
+	 * @return result
+	 * @throws SQLException
+	 */
+	public int retireEmployee(int input) throws SQLException {
+		
+		Connection conn = getConnection();
+		int result = dao.updateEmployee(conn, input);
+		
+		if(result > 0) commit(conn);
+		else           rollback(conn);
+
+		close(conn);
+		
+	
+		return result;
+	}
+
+
+
+	}
+	
 	
 	
 	
 
-}
