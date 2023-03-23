@@ -39,13 +39,14 @@ public class Emp {
 
 
 
-	public Emp(int empId, String empName, String phone, String departmentTitle, String jobName) {
+	public Emp(int empId, String empName, String phone, String departmentTitle, String jobName, int salary2, String phone2, String email2) {
 		this.empId = empId;
 		this.empName = empName;
 		this.phone = phone;
 		this.departmentTitle = departmentTitle;
 		this.jobName = jobName;
 	}
+
 
 
 

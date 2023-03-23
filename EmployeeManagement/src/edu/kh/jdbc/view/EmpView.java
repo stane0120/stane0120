@@ -2,8 +2,10 @@ package edu.kh.jdbc.view;
 
 import java.nio.file.spi.FileSystemProvider;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import edu.kh.jdbc.model.dto.Emp;
@@ -14,6 +16,8 @@ public class EmpView {
 	private Scanner sc = new Scanner(System.in);
 	
 	private EmpService service = new EmpService();
+
+	private Emp emp;
 	
 	//** 모든 기능에는 예외상황에 따른 출력 구문 필수 작성 **
 	//** 필요에 따라 DTO에 생성자 추가 **
@@ -109,7 +113,7 @@ public class EmpView {
 				case 6:  break;
 				case 7:  break;
 				case 8:  break;
-				case 9:  break;
+				case 9:  selectDepartment(); break;
 				case 0: System.out.println("\n[프로그램을 종료합니다...]\n"); break;
 				
 				default: System.out.println("\n[메뉴에 존재하는 번호를 입력하세요.]\n");
@@ -162,7 +166,7 @@ public class EmpView {
 	
 	private void selectOne() {
 		
-		System.out.println("\n----- 전체 사원 조회 -----\n");
+		System.out.println("\n----- 퇴직한 사원 전체 사원 조회 -----\n");
 		
 		try {
 			
@@ -173,12 +177,15 @@ public class EmpView {
 			}
 			
 			
-			for (Emp em : empList)
-				System.out.printf("%d / %d / %s / %d / %d \n", em.getEmpId(), em.getEmpName(),
-						           em.getPhone(), em.getEmail(), em.getEntDate());
+			for (Emp em: empList) {
+				System.out.printf("%d / %s / %s / %s / %s \n",em.getEmpId(), em.getEmpName(),  
+					em.getPhone(), em.getEmail(), em.getEntDate());
+			}
+			
+	}
 		
-		
-	} catch (SQLException e) {
+				
+	 catch (SQLException e) {
 		System.out.println();
 		e.printStackTrace();
 	}
@@ -201,7 +208,7 @@ private void selectTwo() {
     
     try {
     	
-    	Emp em = service.selectTwo(input);
+    	Emp em = (Emp) service.selectTwo(input);
     	
     	if (em == null) {
     		System.out.println("[일치하는 사번의 사원이 존재하지 않습니다.]");
@@ -274,7 +281,64 @@ private void selectTwo() {
 	      }
 	            
 }
+ 
+ /** 부서별 통계 조회 */
+ private void selectDepartment() {
+	 System.out.println("\n***** 부서별 통계 조회 *****\n");
+	 
+	 // DTO가 없을 때 Map을 사용하는 이유
+	 // 1. DTO를 작성하는게 코드 낭비인 경우
+	 // 2. DTO와 Map의 구조가 유사하기 때문에
+	 
+	 Emp emp = new Emp(0, null, null, null, null, 0, null, null);
+	 
+	 emp.setEmpId(200);
+	 emp.setEmpName("고길동");
+	 
+	 emp.getEmpId();
+	 emp.getEmpName();
+	 
+	 // tip. DTO의 필드를 Map의 Key라고 생각
+	 
+	/* Map<String, Object> map = new HashMap<>();
+	 map.put("empId", 200);
+	 map.put("empName", "고길동");
+	 
+	 map.get("empId");
+	 map.get("empName");
+	 
+	
+	 List<Emp> empList;
+	 
+	 List<Map<String, Object>> mapList;
+	 */
+	 
+	 try {
+		List<Map<String, Object>> mapList = service.selectDepartment();
+		
+		// 조회 결과 출력
+		for(Map<String, Object> map : mapList) {
+			
+//			System.out.printf("%s / %d / %d \n", 
+//					map.get("deptTitle"),
+//					map.get("count"),
+//					map.get("avg"));
+		}
+		
+		Set<String> set = map.keySet(); // 
+		
+		for(String key : set) {
+			System.out.print(map.get(key) + " ");
+		}
+		System.out.println(); // 줄바꿈
+		
+		
+	} catch (SQLException e) {
+		System.out.println("[부서별 통계 조회 중 예외 발생]");
+		e.printStackTrace();
+	}
+	 
+	 
+ }
 }
  
- 
-

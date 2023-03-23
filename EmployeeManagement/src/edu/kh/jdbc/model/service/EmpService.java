@@ -5,6 +5,7 @@ import static edu.kh.jdbc.common.JDBCTemplate.*;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import edu.kh.jdbc.common.JDBCTemplate;
 import edu.kh.jdbc.model.dao.EmpDAO;
@@ -14,6 +15,11 @@ public class EmpService {
 
 	private EmpDAO dao = new EmpDAO();
 
+	
+	/** 재직 중인 사원 정보 반환 서비스
+	 * @return empList
+	 * @throws SQLException
+	 */
 	public List<Emp> selectAll() throws SQLException {
 
 		Connection conn = getConnection();
@@ -25,11 +31,11 @@ public class EmpService {
 		return empList;
 	}
 
-	public Emp selectTwo(int input) throws SQLException {
+	public List<Emp> selectTwo(int input) throws SQLException {
 		
 		Connection conn = getConnection();
 		
-		Emp emp = dao.selectTwo(conn, input);
+		List<Emp> emp = dao.selectTwo(conn, input);
 		
 		close(conn);
 
@@ -52,4 +58,26 @@ public class EmpService {
 		return result;
 
 	}
+	
+	
+	private Connection getConncetion() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/** 부서별 통계 조회 서비스
+	 * @return mapList
+	 * @throws SQLException
+	 */
+	public List<Map<String, Object>> selectDepartment() throws SQLException{
+		
+		Connection conn = getConnection();
+		
+		List<Map<String, Object>> mapList = dao.selectDepartment(conn);
+		
+		close(conn);
+	
+		return mapList;
+	}
+
 }
