@@ -27,8 +27,6 @@ public class ScannerEx {
 		System.out.printf("%d + %d = %d", input1, input2, input1+input2);
 		
 		
-		
-				
 				
 	}
 }
