@@ -28,6 +28,12 @@
 	AND MEMBER_NO = ?
 	</entry>
 
+   <entry key = "unRegisterMember">
+    UPDATE "MEMBER"
+    SET UNREGISTER_FL = 'Y'
+    WHRER MEMBER_NO = ?
+    AND MEMBER_PW = ?
+   </entry>
 
 </properties>
 

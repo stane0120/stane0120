@@ -88,10 +88,11 @@ public String createSecurityCode() {
 	return code.toString();
 	
 }
-/**
+/** 회원 탈퇴 서비스
  * @param memberPw
  * @param memberNo
- * @return 
+ * @return result
+ * @throws Exception
  */
 public int unRegisterMember(String memberPw, int memberNo) throws Exception {
 	
@@ -103,10 +104,6 @@ public int unRegisterMember(String memberPw, int memberNo) throws Exception {
 	else           rollback (conn);
 	
 	return 0;
-	
-	close(conn);
-	
-	return result;
 }
 
 
