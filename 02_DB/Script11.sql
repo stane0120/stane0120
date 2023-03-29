@@ -1,0 +1,10 @@
+UPDATE BOARD 
+SET MEMBER_NM = ?,
+    MEMBER_GENDER = ?
+WHERE MEMBER_NO = ?
+
+
+
+
+
+

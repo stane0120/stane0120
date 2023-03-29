@@ -23,6 +23,18 @@ WHERE UNREGISTER_FL = 'N'
 ORDER BY MEMBER_NO DESC;
 
 
+	UPDATE "MEMBER"
+	SET MEMBER_PW = ? 
+	WHERE MEMBER_PW = ?
+    AND MEMBER_NO = ?
+    
+    
+    
+    -- 회원 탈퇴
+    UPDATE "MEMBER"
+    SET UNREGISTER_FL = ''
+    WHRER MEMBER_NO = ?
+    AND MEMBER_PW = ?
 
 
 
