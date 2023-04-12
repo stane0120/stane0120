@@ -1,0 +1,78 @@
+*{ 
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ div, main, section, header, footer, article, nav, aside, form
+{ border : 1px solid black;}  /* 다 만들고 삭제 */ 
+
+
+main{
+    width: 1140px;
+    margin : auto;
+
+    min-height: 500px;
+}
+
+/* header */
+header{
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+/* header > div:nth-child(1) {width: 15%; height: 100%;} 
+header > div:nth-child(2) {width: 70%; height: 100%;}  
+header > div:nth-child(3) {width: 15%; height: 100%;}  */
+
+
+/* 로고 */
+header > section:first-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title{
+    width: 190px;
+    height: auto; /* 이미지 기본 비율에 맞게 자동 지정 */
+    align-items:center;
+}
+
+
+/* 검색 영역 */
+header > section:first-child{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.search-area{
+    width: 500px;
+}
+
+.search-area fieldset{
+    
+    border-radius: 5px;
+    display: ;
+}
+
+/* 검색 창 */
+#query{
+    border : none;
+    outline : 0;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px;
+    width: 92%;
+}
+/* 검색 버튼 */
+#searchBtn{
+    width: 8%;
+    cursor: pointer;
+    border : none;
+    font-size: 1.2em;
+    color: #455ba8;
+    background-color: white;
+}
