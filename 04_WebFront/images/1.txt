@@ -54,6 +54,9 @@ html, css, jsp, js, 이미지, 파일
 
 
 
+단축키 지정
+-> 빌드 클린 : ctrl + f5
+-> run on server : f10
 
 
 
