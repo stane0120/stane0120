@@ -58,8 +58,16 @@ html, css, jsp, js, 이미지, 파일
 -> 빌드 클린 : ctrl + f5
 -> run on server : f10
 
+Servlet
+- 웹 서비스(요청, 응답)
+코드 작성 클래스
+-> 응답 화면 만들기 어렵다.
+JSP(Java Server Page) 사용 
+작성법은 HTML + Java
+Java로 변환
 
 
 
+redirect()
 
 
