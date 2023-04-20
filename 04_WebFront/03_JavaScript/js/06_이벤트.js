@@ -6,7 +6,7 @@ function test1(el){ // el == element == 전달 받은 요소
 
 // 고전 이벤트 모델 확인하기
 
-// 아이디가 'test2a'인 얻어오기
+// 아이디가 'test2a'인 요소 얻어오기
 console.log(document.getElementById('test2a').onclick);
 // -> null 출력 (아직 click했을 때 동작할 함수(이벤트 핸들러)가 없음)
 
