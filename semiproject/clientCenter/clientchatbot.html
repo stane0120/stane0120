@@ -9,7 +9,7 @@
 <body>
     
     <section class="content">
-        <section class="content-1">
+        <section class="content-1"></section>
             <h3>QUICK LINK</h3>
         
             <pre>
@@ -17,15 +17,59 @@
                 i want to remove my signature from a petition
                 i want to delete my petition
                 i want help with my petition
-            </pre>
             
         </section>
-        <pre>
+
+        <section>
             Don't see what you're looking for?
             contact us and we'll get back to you as soon as possible
-        </pre>
-        </section>
+            
+            <br>
+            <a href="FAQ.html">
+                <img src="17.png">
+            </a>
 
+        </pre>
+
+        </section>
+        
+        
+        <span class="open"><img src="19.png"></span>
+        <p><a href="cha.html"></a></p></p>
+
+
+        <Script>
+        const pList = document.getElementsByTagName("p");
+        
+        for(let p of pList){
+            p.style.margin = "0";
+            p.style.display = "none";
+        }
+        
+        const openList = document.getElementsByClassName("open");
+        for(let open of openList){
+            open.style.cursor = "pointer";
+            open.style.display = "inline-block"
+
+
+        open.addEventListener("click", e => {
+
+            const next =e.target.nextElementSibling;
+
+            if(next.style.display == "none"){
+
+                next.style.display = "inline-block";
+                e.target.innerText="X";
+            } else {
+                next.style.display = "none"
+                e.target.innerText="＠";
+            }
+
+
+        });
+}
+
+        </Script>
 
 </body>
 </html>

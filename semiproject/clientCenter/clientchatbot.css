@@ -5,11 +5,14 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
+    margin: 500px 0 0 500px;
 
 }
 .content-1{ 
     flex-basis: 70%;
     padding: 20px;
+
+    
 }
 .content-1 > *{
     margin-bottom: 20px;
@@ -18,3 +21,4 @@
     font-size: 1rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
