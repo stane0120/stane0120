@@ -1,0 +1,29 @@
+jdk sts 다운 받기
+한글 없는 경로에 만들어야 함
+
+-startup
+plugins/org.eclipse.equinox.launcher_1.6.300.v20210813-1054.jar
+--launcher.library
+plugins/org.eclipse.equinox.launcher.win32.win32.x86_64_1.2.300.v20210828-0802
+-product
+org.springsource.sts.ide
+--launcher.defaultAction
+openFile
+-vm
+C:\tools\06_framework\jdk-11.0.2\bin\javaw.exe
+-vmargs
+-Dosgi.requiredJavaVersion=11
+-Dosgi.dataAreaRequiresExplicitInit=true
+-Xms256m
+-Xmx2048m
+--add-modules=ALL-SYSTEM
+-Dosgi.module.lock.timeout=10
+
+outline explorer dashboard 끄기
+
+UTF8 polling 체크
+WEB UTF8 바꾸기
+
+작업환경
+pdf파일 확인하기
+
