@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>clientchatbot</title>
+
+    <link rel="stylesheet" href="clientchatbot.css">
 </head>
 <body>
     
@@ -25,6 +27,7 @@
             contact us and we'll get back to you as soon as possible
             
             <br>
+            
             <a href="FAQ.html">
                 <img src="17.png">
             </a>
@@ -35,7 +38,7 @@
         
         
         <span class="open"><img src="19.png"></span>
-        <p><a href="cha.html"></a></p></p>
+        <p><a href="cha.html"></a></p>
 
 
         <Script>
@@ -54,7 +57,7 @@
 
         open.addEventListener("click", e => {
 
-            const next =e.target.nextElementSibling;
+            const next = e.target.nextElementSibling;
 
             if(next.style.display == "none"){
 
@@ -62,7 +65,7 @@
                 e.target.innerText="X";
             } else {
                 next.style.display = "none"
-                e.target.innerText="＠";
+                e.target.innerText="@";
             }
 
 
@@ -70,6 +73,6 @@
 }
 
         </Script>
-
+<script src="clientchatbot.js"></script>
 </body>
 </html>
