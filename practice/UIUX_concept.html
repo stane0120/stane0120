@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>입력된 수만큼 input만들고합계구하기</title>
+
+<style>
+
+.input-number {display: block; width: 100px; margin: 10px 0;}
+
+</style>
+
+</head>
+
+<body>
+
+<label for="count">생성할 input 개수 입력 : </label>  <!-- 생성할 빈칸 개수 입력하기 -->
+
+<input type="text" size="5"> 개  <!-- 텍스트 타입의 빈칸으로 만든다 -->
+
+<button id="btn">생성</button> <!-- 빈칸을 생성하는 버튼 -->
+
+<hr>
+
+<button id="sumBtn">아래 입력된 숫자 모두 더하기</button> <!-- 빈칸에 입력된 숫자 모두 더하는 버튼 -->
+
+결과 : <span id="result"></span> <!-- 결과가 써져있는 창 -->
+
+<div id="container"></div> <!-- ?? -->
+
+<script>
+
+const btn = document.getElementById("btn");
+
+const sumBtn = document.getElementById("sumBtn");
+
+const result = document.getElementById("result");
+
+const container = document.getElementById("container"); /* id 타입의 변수를 모두 얻어온다 */
+
+btn.addEventListener("click", e => { /* 생성 버튼을 클릭했을때 밑의 함수로 행동해라 */
+
+container.innerHTML = ""; /* container의 값을 한번 초기화하는 함수 */
+
+const count = e.target.previousElementSibling.value; /* 카운트 다음의 행동을 한다 */
+
+for(let i=0 ; i<count ; i++){  /* 몇개를 만들지 입력했을때 */
+
+const input = document.createElement("input"); /* 빈칸을 만드는 함수 */
+
+input.setAttribute("type", "number");/* 그 빈칸은 number타입으로 만든다 */
+
+input.className = 'input-number'; /* input의 클래스 이름을 input-number로 한다 */
+
+container.append(input); /* container로 input의 값을 삽입한다 */
+
+}
+
+});
+
+sumBtn.addEventListener("click", ()=>{ /* 입력된 숫자를 모두 더하는 버튼을 눌렀을때 아래 함수로 행동해라 */
+
+const inputArr = document.getElementsByClassName("input-number"); /* input-number 클래스 변수를 얻어옴 */
+
+let sum = 0; /* sum 변수 선언 */
+
+for(const input of inputArr){ /* ?? */
+
+sum += Number(input.value); /* 입력된 값을 모두 더하는 코드 */
+
+}
+
+result.innerText = sum; /* 더한 값을 출력하는 코드 */
+
+});
+
+</script>
+
+</body>
+
+</html>
