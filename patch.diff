@@ -1,0 +1,988 @@
+From 16519547a8c6338aae8c535dcd75304f536f0442 Mon Sep 17 00:00:00 2001
+From: stane0120 <stane0120@iei.or.kr>
+Date: Wed, 26 Apr 2023 15:54:00 +0900
+Subject: [PATCH] =?UTF-8?q?Revert=20"20230426=20=ED=95=99=EC=9B=90?=
+ =?UTF-8?q?=EC=97=90=EC=84=9C=20=EC=BB=A4=EB=B0=8B"?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+This reverts commit 1c1ee3227ed7ce932cbef67160e7ab4af7a6048f.
+---
+ 04_WebFront/images/1.txt                      |  73 +++++++++
+ 04_WebFront/images/1111111111.txt             |  54 +++++++
+ 04_WebFront/images/123.txt                    |  52 +++++++
+ 06_Framework/boardProject/pom.xml             |  43 ------
+ .../member/controller/MemberController.java   | 144 ++----------------
+ .../project/member/model/dao/MemberDAO.java   |  37 -----
+ .../kh/project/member/model/dto/Member.java   |  25 ---
+ .../member/model/service/MemberService.java   |  27 ----
+ .../model/service/MemberServicesImpl.java     |  37 -----
+ .../main/resources/mappers/member-mapper.xml  |  93 -----------
+ .../src/main/resources/mybatis-config.xml     |  24 ---
+ .../spring/appServlet/servlet-context.xml     |  32 ----
+ .../main/resources/spring/root-context.xml    |  61 --------
+ .../main/webapp/WEB-INF/views/common/main.jsp |   4 +-
+ .../src/main/webapp/WEB-INF/web.xml           |  16 --
+ practice/UIUX_concept.html                    |   6 +-
+ practice/UIarchitecture.html                  |   8 +-
+ 17 files changed, 201 insertions(+), 535 deletions(-)
+ create mode 100644 04_WebFront/images/1.txt
+ create mode 100644 04_WebFront/images/1111111111.txt
+ create mode 100644 04_WebFront/images/123.txt
+ delete mode 100644 06_Framework/boardProject/src/main/java/edu/kh/project/member/model/dao/MemberDAO.java
+ delete mode 100644 06_Framework/boardProject/src/main/java/edu/kh/project/member/model/dto/Member.java
+ delete mode 100644 06_Framework/boardProject/src/main/java/edu/kh/project/member/model/service/MemberService.java
+ delete mode 100644 06_Framework/boardProject/src/main/java/edu/kh/project/member/model/service/MemberServicesImpl.java
+ delete mode 100644 06_Framework/boardProject/src/main/resources/mappers/member-mapper.xml
+ delete mode 100644 06_Framework/boardProject/src/main/resources/mybatis-config.xml
+
+diff --git a/04_WebFront/images/1.txt b/04_WebFront/images/1.txt
+new file mode 100644
+index 0000000..1fda57f
+--- /dev/null
++++ b/04_WebFront/images/1.txt
+@@ -0,0 +1,73 @@
++netplwiz 
++ORA_ASMDBA; ORA_DBA; ORA
++
++HTML,css ���
++auto close tag
++auto rename tag
++class autocomlete
++eclipse keymap
++indent-rainbow
++intellicode
++intellicode api usa
++javascript es6
++korean language
++live server
++material icon
++quick html
++tabout
++
++
++��Ŭ����
++show heap status üũ
++refresh using native hooks or polling üũ
++text file encoding
++ohter utf8
++
++
++��ܿ� enc�˻�
++general -> content Types default econding utf-8 
++enc -> utf8 ���Ϸ� �ٲٱ�
++
++
++�ܺ� ���� ������ �̿��ؼ� ���� -> �̰� ����ϴ� ����
++
++ContextRoot : �ֻ��� �ּ�
++
++Content directory : �� ���� ����
++-> ��ȣ == ���ͳ� �ö�
++-> �ּ�ġ�� ȭ�� ����
++
++- ���� �� �ʿ��� ���ϸ� ��Ƶ� ����
++-> .class / html / css / jsp / js
++    �̹���, ���� ��
++
++Generate web.xml deployment descriptor
++- ���� ������ web.xml ���� ����� üũ
++
++src/main/java
++= java �ڵ� �ۼ� ����
++
++
++src / main / webapp (== Content directory)
++- ������ �ڵ� �ۼ� ����
++html, css, jsp, js, �̹���, ����
++
++
++
++����Ű ����
++-> ���� Ŭ�� : ctrl + f5
++-> run on server : f10
++
++Servlet
++- �� ����(��û, ����)
++�ڵ� �ۼ� Ŭ����
++-> ���� ȭ�� ����� ��ƴ�.
++JSP(Java Server Page) ��� 
++�ۼ����� HTML + Java
++Java�� ��ȯ
++
++
++
++redirect()
++
++
+diff --git a/04_WebFront/images/1111111111.txt b/04_WebFront/images/1111111111.txt
+new file mode 100644
+index 0000000..d94906b
+--- /dev/null
++++ b/04_WebFront/images/1111111111.txt
+@@ -0,0 +1,54 @@
++button type: "button"; 으로 수정
++</label>을 뒤로 보내 input을 감싼다 or for ="" 속성 추가
++name= "같은 값"
++
++첫번째로 선택되게 한다면 <option selected>
++
++<form action='insertMember.do" method="POST">
++
++input(name(제출 시 key), value(제출 시 value) placeholder)
++
++text 속성 : size(인풋태그 전체의 크기)
++, maxlength(글자를 쓸 수 있는 개수)
++, email, tel, search, url
++
++
++checked 속성
++checkbox, radio
++
++selected 속성
++option
++
++required 속성
++모든 인풋
++
++textarea(rows, cols 속성)
++
++-> 여러 줄 작성 가능한 input type="text"
++
++
++action 속성
++제출할 url(주소)
++
++method 속성(get/post)
++제출 방식 GET : 주소에 name=value 형식을 값을 담아 제출
++POST 주소 X (HTTP Body에 담아 숨겨서 제출)
++
++
++a (href, target, 점프)
++a href (주소로 연결)
++
++웹 주소
++<img src="주소">
++
++이미지 크기
++width / height : 이미지 크기
++
++a태그는 현재 웹 문서와 다른 웹문서를 연결해서
++페이지간의 이동을 가능하게 만드는 기능을 제공
++
++a태그로 감싸진 문자열 == 하이퍼링크
++
++
++url 새탭에서 열기
++<a href="" target="_black">스포일러<a>
+diff --git a/04_WebFront/images/123.txt b/04_WebFront/images/123.txt
+new file mode 100644
+index 0000000..7922eea
+--- /dev/null
++++ b/04_WebFront/images/123.txt
+@@ -0,0 +1,52 @@
++span class=open
++내용을 나오게 하는 버튼
++
++const pList = document.getElementsByTagName("p")
++p태그 받아오기
++
++클릭된 open의 다음 요소 선택
++const next = e.targetnextElementSibling;
++
++클릭될때마다
++open.addEventListener("click", e =>{});
++
++ID를 얻어올 때
++const addBtn = document.getElementById("addBtn");
++
++클래스를 얻어올 때
++const container = document.getElementsByclassName("container");
++
++
++자식 요소를 추가할 때
++tr.append(td1);
++
++각각의 input태그에 type 지정
++input1.setAttribute("type", "text");
++input2.setAttribute("type", "number");
++
++각각의 input 태그에 class를 추가
++input1.classList.add("pName")
++
++누적한 값을 내용으로 출력
++sumSpan.innerText = sum;
++
++각각의 값을 얻어와 sum에 누적
++for(let price of priceList){
++
++sum += Number(price.value);
++}
++
++각각의 값을 얻어와 sum에 누적
++for(let price of priceList){
++
++sum += Number(price.value);
++
++}
++
++
++priceList의 길이를 출력
++amountSpan.innerText = priceList.length;
++
++위에 미리 변수 얻어오기
++const resultBtn = document.getElementbyId("resultBtn");
++ 등등
+\ No newline at end of file
+diff --git a/06_Framework/boardProject/pom.xml b/06_Framework/boardProject/pom.xml
+index f90895a..1994d7e 100644
+--- a/06_Framework/boardProject/pom.xml
++++ b/06_Framework/boardProject/pom.xml
+@@ -21,55 +21,12 @@
+ 		사용자가 직접 받을 필요 없이 해당 태그 내에 지정된 형식으로 작성하면 네트워크를 통해 외부 저장소에서 자동으로 얻어와 세팅함. -->
+ 	<dependencies>
+ 
+-        <!-- lombok 라이브러리 -->
+-      <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+-      <dependency>
+-      <groupId>org.projectlombok</groupId>
+-      <artifactId>lombok</artifactId>
+-      <version>1.18.24</version>
+-      <scope>provided</scope>
+-      </dependency>
+-      
+-      <!-- 오라클 JDBC 드라이버 -->
+ 		<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc11 -->
+ 		<dependency>
+ 			<groupId>com.oracle.database.jdbc</groupId>
+ 			<artifactId>ojdbc11</artifactId>
+ 			<version>21.5.0.0</version>
+ 		</dependency>
+-		
+-	  <!-- 스프링에서 JDBC를 사용할 수 있게 하는 라이브러리 -->
+-      <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+-      <dependency>
+-         <groupId>org.springframework</groupId>
+-         <artifactId>spring-jdbc</artifactId>
+-         <version>${org.springframework-version}</version>
+-         <!-- 위 properties의 지정한 Spring 버전을 따라감 -->
+-      </dependency>
+-
+-      <!-- Mybatis 영속성 프레임워크  -->
+-      <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+-      <dependency>
+-         <groupId>org.mybatis</groupId>
+-         <artifactId>mybatis</artifactId>
+-         <version>3.5.9</version>
+-      </dependency>
+-
+-      <!-- Spring - Mybatis 연결 모듈, 연결 역할을 하는 라이브러리 -->
+-      <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+-      <dependency>
+-         <groupId>org.mybatis</groupId>
+-         <artifactId>mybatis-spring</artifactId>
+-         <version>2.0.6</version>
+-      </dependency>
+-
+-      <!-- 커넥션 풀 기능을 사용하기 위한 라이브러리 -->
+-      <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
+-      <dependency>
+-          <groupId>org.apache.commons</groupId>
+-          <artifactId>commons-dbcp2</artifactId>
+-          <version>2.9.0</version>
+-      </dependency>
+ 
+ 
+ 		<!-- Spring 모듈 -->
+diff --git a/06_Framework/boardProject/src/main/java/edu/kh/project/member/controller/MemberController.java b/06_Framework/boardProject/src/main/java/edu/kh/project/member/controller/MemberController.java
+index 1ee481b..93adfef 100644
+--- a/06_Framework/boardProject/src/main/java/edu/kh/project/member/controller/MemberController.java
++++ b/06_Framework/boardProject/src/main/java/edu/kh/project/member/controller/MemberController.java
+@@ -2,160 +2,42 @@ package edu.kh.project.member.controller;
+ 
+ import javax.servlet.http.HttpServletRequest;
+ 
+-import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.stereotype.Controller;
+-import org.springframework.ui.Model;
+-import org.springframework.web.bind.annotation.ModelAttribute;
+-import org.springframework.web.bind.annotation.PostMapping;
+ import org.springframework.web.bind.annotation.RequestMapping;
+ import org.springframework.web.bind.annotation.RequestMethod;
+ import org.springframework.web.bind.annotation.RequestParam;
+ 
+-import edu.kh.project.member.model.dto.Member;
+-import edu.kh.project.member.model.service.MemberService;
+-
+ @Controller // 요청/응답 클래스 + bean 등록(Spring이 관리하는 객체)
+ 
+-// @RequestMapping: 요청 주소에 맞는 클래스/메서드 연결
+-
+-// @RequestMapping("요청 주소")
+-// -> GET / POST 구분 안하고 모두 받는다(주소만 맞으면 연결하겠다)
+-
+-// @RequestMapping(value="요청 주소", method=RequestMethod.GET/POST)
+-// -> GET / POST 방식을 구분
+-
+-
+-
+ @RequestMapping("/member") // 공통된 주소 앞부분 작성 
+                            // member로 시작하는 요청은 해당 컨트롤러에서 처리
+ public class MemberController {
+ 	
+-	// 등록된 Bean 중에서 필드와 타입이 일치하는 Bean을 주입
+-	// -> MemberService를 상속 구현한 MemberServiceImpl의 Bean이 주입된다.
+-	@Autowired
+-	private MemberService service;
+-	
+-	
+-	
+-	
+-	
+ 	// 로그인 :  /member/login
+ 	// 로그아웃 : /member/logout
+ 	
+ 	// 로그인 (/member/login), POST 방식 처리
+-	// Class에 작성한 /member를 제외한 나머지 부분을 주소로 작성
+-//	@RequestMapping(value="/login", method=RequestMethod.POST)
+-	public String login(HttpServletRequest req) {
+-		
+-		// v파라미터 전달 방법 1 : HttpServletRequest를 이용하는 방법
+-		// -> Controller 메서드에 매개변수로 HttpServletRequest 작성
+-		
+-		// 매개변수에 적으면 왜 사용 가능할까??
+-		// Spring Framework가 제공하는 
+-		// Argument Resolver(매개 변수 해결사)가 해결해줘서
+-		
+-		String inputEmail = req.getParameter("inputEmail");
+-		String inputPw = req.getParameter("inputPw");
+-		
+-		System.out.println("inputEmail : " + inputEmail);
+-		System.out.println("inputPw : " + inputPw);
+-	
+-		
+-		// ********* redirect 방법! ********* 
+-		// "redirect:요청주소" 	
+-		return "redirect:/";
+-	}
+-	
+-	
+-	
+-	// @PostMapping
+-	// -> @RequestMapping의 자식으로
+-	//    POST 방식 요청을 연결하는 어노테이션
+-	/* @PostMapping("/login") */
+-	public String login(/* @RequestParam("inputEmail") */String inputEmail,
+-			            /* @RequestParam("inputPw") */ String inputPw) {
+-		
+-		// 파라미터 전달 방법 2 : @RequestParam 어노테이션 이용(+생략 방법)
+-		
+-		// @RequestParam 어노테이션
+-		   // - request객체를 이용한 파라미터 전달 어노테이션
+-		   // - 매개변수 앞에 해당 어노테이션을 작성하면, 매개변수에 값이 주입됨.
+-		
+-		   // ** 파라미터의 name 속성 값과
+-		   //    매개 변수명이 같으면 @RequestParam 생략 가능!! **
+-
+-		   // @RequestParam(value="name", required="false", defaultValue="1")
+-		   // [속성]
+-		   // value : 전달 받은 input 태그의 name 속성값
+-		   
+-		   // required : 입력된 name 속성값 파라미터 필수 여부 지정(기본값 true)
+-		   // -> required = true인 파라미터가 존재하지 않는다면 400 Bad Request 에러 발생
+-		   // -> required = true인 파라미터가 null인 경우에도 400 Bad Request
+-
+-		   // defaultValue : 파라미터 중 일치하는 name 속성 값이 없을 경우에 대입할 값 지정.
+-		   // -> required = false인 경우 사용
+-		
+-		
++	@RequestMapping(value="/login", method=RequestMethod.POST)
++	public String login(String inputEmail, String inputPw) {
+ 		
+ 		System.out.println("inputEmail : " + inputEmail);
+ 		System.out.println("inputPw : " + inputPw);
+-		
+-		// 메인 페이지 리다이렉트(재요청)
+-		
+-		return "redirect:/";
+-	}
+-	
+-	
+-	/* @PostMapping("/login") */
+-	public String login(/* @ModelAttribute */ Member inputMember) {
+-		
+-		// 파라미터 전달 방법 3 : @ModelAttribute를 이용한 방법
+-		
+-		// - DTO(또는 VO)와 같이 사용하는 어노테이션
+-		
+-		// - 전달 받은 파라미터의 name 속성 값이
+-		//   같이 사용되는 DTO의 필드명과 같다면
+-		//   자동으로 setter를 호출해서 필드에 값을 세팅
+-		
+-		// *** @ModelAttribute 사용 시 주의사항 ***
+-		// - DTO에 기본 생성자가 필수로 존재해야 한다!
+-		// - DTO에 setter가 필수로 존재해야 한다!
+-		
+-		// *** @ModelAttribute 어노테이션은 생략이 가능하다! ***
+-		
+-		// *** @ModelAttribute를 이용해 값이 필드에 세팅된 객체를
+-		//     "커맨드 객체" 라고 한다 ***
+-		
+-		System.out.println(inputMember);
+-	
+-		return "redirect:/";		
+-	}
+ 	
+-	
+-	// *********************************************************************************
+-	
+-	// alt + shift + j
+-	/** 로그인 요청 처리
+-	 * @return 메인페이지 redirect 주소
+-	 */
+-	@PostMapping("/login")
+-	public String login(Member inputMember, Model model) {
+ 		
+-		// Member inputMember : 커맨드 객체(필드에 파라미터 담겨있음)
++		/*
++		 * (HttpServletRequest req) {
++		 * 
++		 * String inputEmail = req.getParameter("inputEmail");
++		 * 
++		 * System.out.println("inputEmail : " + inputEmail);
++		 * 
++		 * // ** redirect 방법! **
++		 * 
++		 * // "redirect:요청주소"
++		 */		
+ 		
+-		// 로그인 서비스 호출
+-		Member loginMember = service.login(inputMember);
+-		System.out.println(loginMember);
+ 		
+ 		return "redirect:/";
+ 	}
+ 	
+-	
+-	
+-	
+-	
+-	
+-	
+-	
+-	
+ }
+diff --git a/06_Framework/boardProject/src/main/java/edu/kh/project/member/model/dao/MemberDAO.java b/06_Framework/boardProject/src/main/java/edu/kh/project/member/model/dao/MemberDAO.java
+deleted file mode 100644
+index 82217c9..0000000
+--- a/06_Framework/boardProject/src/main/java/edu/kh/project/member/model/dao/MemberDAO.java
++++ /dev/null
+@@ -1,37 +0,0 @@
+-package edu.kh.project.member.model.dao;
+-
+-import org.mybatis.spring.SqlSessionTemplate;
+-import org.springframework.beans.factory.annotation.Autowired;
+-import org.springframework.stereotype.Repository;
+-
+-import edu.kh.project.member.model.dto.Member;
+-
+-@Repository // Persistence Layer, 영속성 관련 클래스
+-//          (파일, DB 관련 클래스) + Bean 등록(== spring이 객체르 만들어둠)
+-public class MemberDAO {
+-
+-    // SqlSessionTemplate (마이바티스 객체) DI
+-	@Autowired // 등록된 Bean 중에서 SqlSessionTemplate 타입의 Bean을 주입
+-	private SqlSessionTemplate sqlSession;
+-	
+-	
+-	/** 로그인 DAO
+-	 * @param inputMember
+-	 * @return 회원 정보 또는 null
+-	 */
+-	public Member login(Member inputMember) {
+-		
+-	    // 마이바티스를 이용해서 1행 조회(selectOne)
+-		
+-		// sqlSession.selectOne("namespace값.id값" , 전달할 값);
+-        // -> namespace가 일치하는 매퍼에서
+-		//    id가 일치하는 SQL 구문을 수행 후
+-		//    결과를 1행(dto, 기본 자료형) 반환
+-		
+-		return sqlSession.selectOne("memberMapper.login", inputMember);
+-	}
+-	
+-	
+-	
+-
+-}
+diff --git a/06_Framework/boardProject/src/main/java/edu/kh/project/member/model/dto/Member.java b/06_Framework/boardProject/src/main/java/edu/kh/project/member/model/dto/Member.java
+deleted file mode 100644
+index 87dc072..0000000
+--- a/06_Framework/boardProject/src/main/java/edu/kh/project/member/model/dto/Member.java
++++ /dev/null
+@@ -1,25 +0,0 @@
+-package edu.kh.project.member.model.dto;
+-
+-import lombok.Getter;
+-import lombok.NoArgsConstructor;
+-import lombok.Setter;
+-import lombok.ToString;
+-
+-@NoArgsConstructor // 기본 생성자
+-@Getter
+-@Setter
+-@ToString
+-
+-public class Member {
+-	private int memberNo;
+-	private String memberEmail;
+-	private String memberPw;
+-	private String memberNickname;
+-	private String memberTel;
+-	private String memberAddress;
+-	private String profileImage;
+-	private String enrollDate;
+-	private String memberDeleteFlag;
+-	private int authority;
+-}
+-
+diff --git a/06_Framework/boardProject/src/main/java/edu/kh/project/member/model/service/MemberService.java b/06_Framework/boardProject/src/main/java/edu/kh/project/member/model/service/MemberService.java
+deleted file mode 100644
+index e8ac8f6..0000000
+--- a/06_Framework/boardProject/src/main/java/edu/kh/project/member/model/service/MemberService.java
++++ /dev/null
+@@ -1,27 +0,0 @@
+-package edu.kh.project.member.model.service;
+-
+-import edu.kh.project.member.model.dto.Member;
+-
+-// Service Interface 사용 이유
+-
+-// 1. 프로젝트에 규칙성을 부여하기 위해서 
+-
+-// 2. 클래스간의 결합도를 약화 시키기 위해서 (객체 지향적 설계)
+-//  -> 유지보수성 향상
+-
+-// 3. Spring AOP 사용을 위해서
+-// -> AOP는 spring-proxy를 이용해서 동작하는데
+-//   이 때 Service 인터페이스가 필요하다!
+-
+-public interface MemberService {
+-
+-	/** 로그인 서비스
+-	 * @param inputMember (email, pw)
+-	 * @return email,pw가 일치하는 회원 정보 또는 null
+-	 */
+-	Member login(Member inputMember);
+-
+-	
+-	
+-
+-}
+diff --git a/06_Framework/boardProject/src/main/java/edu/kh/project/member/model/service/MemberServicesImpl.java b/06_Framework/boardProject/src/main/java/edu/kh/project/member/model/service/MemberServicesImpl.java
+deleted file mode 100644
+index 4a4923c..0000000
+--- a/06_Framework/boardProject/src/main/java/edu/kh/project/member/model/service/MemberServicesImpl.java
++++ /dev/null
+@@ -1,37 +0,0 @@
+-package edu.kh.project.member.model.service;
+-
+-import org.springframework.beans.factory.annotation.Autowired;
+-import org.springframework.stereotype.Service;
+-
+-import edu.kh.project.member.model.dao.MemberDAO;
+-import edu.kh.project.member.model.dto.Member;
+-
+-@Service // Service Layer
+-         // 비즈니스 로직(데이터 가공, DAO호출, 트랜잭션 제어)을 처리하는 클래스라 명시
+-         // + Bean 등록하는 어노테이션
+-public class MemberServicesImpl implements MemberService{
+-
+-	// @Autowired : 작성된 필드와
+-	// Bean으로 등록된 객체 중 타입이 일치하는 Bean을
+-	// 해당 필드에주입(Injection)하는 어노테이션
+-	// == DI(Dependency Injection, 의존성 주입)
+-	//    -> 객체를 직접 만들지 않고 Spring이 만든걸 주입함(Spring에 의존)
+-	@Autowired
+-	private MemberDAO dao;
+-
+-	@Override
+-	public Member login(Member inputMember) { 
+-		
+-		// 암호화 추가 예정
+-		
+-		// dao 메서드 호출
+-		Member loginMember = dao.login(inputMember);
+-		
+-		return loginMember;
+-	}
+-	
+-
+-	
+-	
+-	
+-}
+diff --git a/06_Framework/boardProject/src/main/resources/mappers/member-mapper.xml b/06_Framework/boardProject/src/main/resources/mappers/member-mapper.xml
+deleted file mode 100644
+index 458da10..0000000
+--- a/06_Framework/boardProject/src/main/resources/mappers/member-mapper.xml
++++ /dev/null
+@@ -1,93 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+-<mapper namespace="memberMapper">
+-     <!-- namespace : 공간(영역, 지역, 태그)의 이름 -->
+-
+-     <!-- mapper 파일 생성 시 아래 태그 삭제 -->
+-     <!-- <cache-ref namespace=""/> -->
+-  
+-     <!-- 
+-      resultMap  
+-      - SELECT 조회 결과(ResultSet) 컬럼명과
+-        컬럼 값을 옮겨 담을 VO의 필드명이 같지 않을 때
+-        이를 매핑 시켜 SELECT시 자동으로 담기게하는 역할
+-    
+-    
+-       -속성
+-       type : 연결할 VO (패키지명 + 클래스명 또는 별칭)
+-       id : 만들어진 resultMap을 지칭할 식별명(이름)
+-       
+-       <id> 태그 : PK 역할 컬럼 - 필드 매핑
+-       <result> 태그 : <id>제외 나머지
+-    -->
+-    
+-   <resultMap type="Member" id="member_rm">
+-      <!-- DB의 기본 키(복합키면 여러 개 작성) -->
+-      <id property="memberNo" column="MEMBER_NO" />
+-
+-      <!-- DB의 일반 컬럼들 -->
+-      <result property="memberEmail" column="MEMBER_EMAIL" />
+-      <result property="memberPw" column="MEMBER_PW" />
+-      <result property="memberNickname" column="MEMBER_NICKNAME" />
+-      <result property="memberTel" column="MEMBER_TEL" />
+-      <result property="memberAddress" column="MEMBER_ADDR" />
+-      <result property="profileImage" column="PROFILE_IMG" />
+-      <result property="enrollDate" column="ENROLL_DATE" />
+-      <result property="memberDeleteFlag" column="MEMBER_DEL_FL" />
+-      <result property="authority" column="AUTHORITY" />
+-   </resultMap>
+-  
+-     <!-- 
+-         SQL 관련 태그의 속성
+-         - parameterType : 전달받은 값의 자료형
+-                        기본 : 패키지명 + 클래스명
+-                        별칭 : Mybatis 별칭 또는 사용자 지정 별칭
+-                        
+-         - parameterMap : (사용 안함)
+-         
+-         - resultType : select 결과를 담아서 반환할 자료형
+-                     단, DTO를 작성할 경우 필드영 = 컬럼명 인 경우만 가능
+-                                   memberNo   MEMBER_NO
+-                     
+-         - resultMap : select 결과의 컬럼명과
+-                       결과를 저장할 DTO 필드명이 다를 경우
+-                       이를 알맞게 매핑(연결)시켜주는 <ResultMap> id 작성              
+-     -->
+-     
+-     <!-- 
+-         ** 마이바티스에서 전달 받은 값을 SQL에 작성하는 방법 **
+-          
+-         #{변수명|필드명} : PreparedStatement
+-                       : SQL에 값 대입 시 양쪽에 '' 붙여서 대입
+-         
+-         ${변수명|필드명} : Statement
+-                       : SQL에 값 대입 시 양쪽에 아무것도 붙이지 않음 
+-         
+-         사용 예시)
+-         test1 = "user01"
+-         test2 = MEMBER_EMAIL
+-         
+-         - MEMBER_EMAIL이 'user01'인 회원 조회
+-         SELECT * FROM MEMBER WHERE ${test2} = #{test1}
+-                                    'MEMBER-EMAIL' == 'user01'
+-         
+-      -->
+-     
+-     
+-     
+-   <!-- <select id="login" parameterType="edu.kh.project.model.dto.member"> -->
+-   
+-    <select id="login" parameterType="Member" resultMap="member_rm">
+-		SELECT MEMBER_NO, MEMBER_EMAIL, MEMBER_NICKNAME, MEMBER_TEL,
+-		MEMBER_ADDR, PROFILE_IMG, AUTHORITY,
+-		TO_CHAR(ENROLL_DATE, 'YYYY"년" MM"월" DD"일" HH24"시" MI"분" SS"초"') AS ENROLL_DATE
+-		FROM "MEMBER"
+-		WHERE MEMBER_DEL_FL = 'N'
+-		AND MEMBER_EMAIL = #{memberEmail}
+-		AND MEMBER_PW = #{memberPw}
+-    </select>
+-     
+-     
+-  
+-  
+-</mapper>
+diff --git a/06_Framework/boardProject/src/main/resources/mybatis-config.xml b/06_Framework/boardProject/src/main/resources/mybatis-config.xml
+deleted file mode 100644
+index 0516063..0000000
+--- a/06_Framework/boardProject/src/main/resources/mybatis-config.xml
++++ /dev/null
+@@ -1,24 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+-<configuration>
+-
+-<!-- SqlSessionTemplate 생성 시 적용될 설정 작성 부분 -->
+-<settings>
+-<!-- insert 또는 update에 사용되는 값 중 null이 있을 경우에 대한 설정
+-해당 설정이 없을 경우 -> SQL 구문에 null 포함되어 있다는 오류 발생.
+-해당 설정이 있을 경우 -> 오류를 발생 시키지 않고 NULL 값을 컬럼에 대입
+-단, NOT NULL 제약조건이 없는 컬럼에만 가능함.
+-** value 설정 시 NULL 은 반드시 대문자로 작성 (소문자 null은 오류가 발생함) -->
+-<setting name="jdbcTypeForNull" value="NULL"/>
+-</settings>
+-<!-- 별칭 작성 부분 -->
+-<!-- VO클래스의 패키지명 + 클래스명 작성하는 것이 불편하기 때문에 짧은 별칭 부여 -->
+-<typeAliases>
+-<typeAlias type="edu.kh.project.member.model.dto.Member" alias="Member"/>
+-</typeAliases>
+-<!-- mapper 파일(SQL 작성되는파일) 위치 등록 부분 -->
+-<mappers>
+-<mapper resource="/mappers/member-mapper.xml"/>
+-</mappers>
+-
+-</configuration>
+diff --git a/06_Framework/boardProject/src/main/resources/spring/appServlet/servlet-context.xml b/06_Framework/boardProject/src/main/resources/spring/appServlet/servlet-context.xml
+index d8f2e85..e2a9319 100644
+--- a/06_Framework/boardProject/src/main/resources/spring/appServlet/servlet-context.xml
++++ b/06_Framework/boardProject/src/main/resources/spring/appServlet/servlet-context.xml
+@@ -9,50 +9,18 @@
+ 
+ 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+ 	
+-	<!-- 
+-	    DispatcherServlet 생성 시 필요한 내용을 정의하는 파일
+-	    
+-	    HandlerMapping :
+-	    어떤 요청을 어떤 클래스/메서드로 연결하는지 제어하는 객체
+-	    <annotation-driven/> 이
+-	    @requestMapping, @GetMapping, @PostMapping을 활성화해서
+-	    HandlerMapping을 대체
+-	    
+-	    
+-	    ViewResolver : Controller에서 반환된 문자열("common/main")
+-	    앞 뒤에 경로 (/Web-INF/views/) , 확장자(.jsp)를 붙여
+-	    jsp 파일의 경로를 지정한 후 forward(요청 위임)을 하는 객체
+-	    
+-	    component-scan : @Component와 자식 어노테이션을 Bean으로 등록하는 태그
+-	    
+-	    
+-	    트랜잭션 관리자, 웹소켓, 인터셉터, 스케쥴러
+-	 -->
+-	
+-	
+ 	<!-- Enables the Spring MVC @Controller programming model -->
+ 	<annotation-driven />
+-	
+ 
+-    <!-- webapp/resources 폴더를 HTTP GET방식 요청으로 접근할 수 있다 -->
+ 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+ 	<resources mapping="/resources/**" location="/resources/" />
+-	
+ 
+-    <!-- ViewsHolder -->
+ 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+ 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+ 		<beans:property name="prefix" value="/WEB-INF/views/" />
+ 		<beans:property name="suffix" value=".jsp" />
+ 	</beans:bean>
+ 	
+-	
+-	<!-- 
+-	    base-package 이하에 작성된 
+-	    @Component 와 자식 어노테이션
+-	    (@Controller, @Service, @Repository)이 붙은
+-	    클래스를 찾아 Bean(Spring이 관리하는 객체)으로 등록
+-	 -->
+ 	<context:component-scan base-package="edu.kh.project" />
+ 	
+ 	
+diff --git a/06_Framework/boardProject/src/main/resources/spring/root-context.xml b/06_Framework/boardProject/src/main/resources/spring/root-context.xml
+index 05c1a9d..e071144 100644
+--- a/06_Framework/boardProject/src/main/resources/spring/root-context.xml
++++ b/06_Framework/boardProject/src/main/resources/spring/root-context.xml
+@@ -5,65 +5,4 @@
+ 	
+ 	<!-- Root Context: defines shared resources visible to all other web components -->
+ 		
+-    <!-- 
+-        프로젝트 전반적으로 사용할 
+-        DB 연결 관련 내용(JDBC, MyBatis, DBCP), AOP, 
+-        트랜잭션 처리, 파일 업로드 등
+-     -->
+-     
+-     
+-<!-- DBCP 사용을 위한 DataSource를 Bean으로 등록 -->
+-
+-<!-- DataSource란? : java에서 Connection Pool을 지원하기 위한 인터페이스 -->
+-<!-- BasicDataSource : DataSource인터페이스를 구현한 클래스, 아파치 commons.dbcp에서 제공 -->
+-<!-- destroy-method="close" : 주어진 세션을 자동으로 반환(close)하라는 설정 -->
+-<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+-<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+-
+-<!-- 자기 컴퓨터 (18C) -->
+-<!-- <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" /> -->
+-
+-<!-- 자기 컴퓨터 (19C) -->
+-<property name="url" value="jdbc:oracle:thin:@localhost:1521:ORCL" />
+-
+-<!-- 학원 DB서버 -->
+-<!--  -->
+-
+-<property name="username" value="project" />
+-<property name="password" value="project1234" />
+-
+-<!-- defaultAutoCommit: SQL 수행 후 자동 COMMIT 설정. (기본값 : true) -->
+-<property name="defaultAutoCommit" value="false" />
+-
+-<!-- 커넥션 풀 설정 -->
+-<property name="initialSize" value="10" /> <!-- 초기 커넥션 수, 기본 0 -->
+-<property name="maxTotal" value="500" /> <!-- 최대 커넥션 수, 기본 8 -->
+-<property name="maxIdle" value="100" /> <!-- 유휴 상태로 존재할 수 있는 커넥션 최대 수, 기본 8 -->
+-<property name="minIdle" value="10" /> <!-- 유휴 상태로 존재할 수 있는 커넥션 최소 수, 기본 0 -->
+-<property name="maxWaitMillis" value="-1" /> <!-- 예외 발생 전 커넥션이 반환 될 떄 까지 대기하는 최대 시간(ms), 기본 -1(무기한) -->
+-
+-</bean>
+-
+-<!-- SqlSession : sql구문을 DB에 전달, 실행하는 객체
+-SqlSessionFactory : SqlSession을 만드는 객체
+-sqlSessionFactoryBean : mybatis 설정 파일(mybatis-config.xml)과 Connection Pool 정보를 이용하여 SqlSessionFactory를 만드는 객체
+-sqlSessionTemplate : SqlSession 객체에 트랜잭션 처리 역할이 가능하도록 하는 객체 -->
+-<!-- 마이바티스 SqlSession 등록하기 (xml 방식으로 bean 등록) -->
+-<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+-<!-- mybatis-config.xml 설정 불러오기 -->
+-<property name="configLocation" value="classpath:mybatis-config.xml" />
+-<property name="dataSource" ref="dataSource" />
+-</bean>
+-<!-- SqlSessionTemplate : 기본 SQL 실행 + 트랜잭션 관리 역할을 하는 SqlSession을 생성할 수 있게 하는 객체(Spring bean으로 등록해야함.) -->
+-<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+-<constructor-arg ref="sqlSessionFactoryBean" />
+-</bean>
+-<!-- 스프링에서 사용하는 proxy를 이용한 트랜잭션 제어가 안될 경우 추가적인 트랜잭션 매니저를 추가해서 문제 해결 -->
+-<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+-<property name="dataSource" ref="dataSource" />
+-</bean>
+-
+-
+-
+-     
+ </beans>
+diff --git a/06_Framework/boardProject/src/main/webapp/WEB-INF/views/common/main.jsp b/06_Framework/boardProject/src/main/webapp/WEB-INF/views/common/main.jsp
+index 899e731..30e3a76 100644
+--- a/06_Framework/boardProject/src/main/webapp/WEB-INF/views/common/main.jsp
++++ b/06_Framework/boardProject/src/main/webapp/WEB-INF/views/common/main.jsp
+@@ -58,8 +58,8 @@
+                 <form action="/member/login" method="POST" id="loginForm">
+                     <fieldset class="id-pw-area">
+                         <section>
+-                            <input type="text" name="memberEmail" placeholder="이메일" autocomplete="off">
+-                            <input type="password" name="memberPw" placeholder="비밀번호">
++                            <input type="text" name="inputEmail" placeholder="이메일" autocomplete="off">
++                            <input type="password" name="inputPw" placeholder="비밀번호">
+                         </section>
+                         <section>
+                             <button>로그인</button>
+diff --git a/06_Framework/boardProject/src/main/webapp/WEB-INF/web.xml b/06_Framework/boardProject/src/main/webapp/WEB-INF/web.xml
+index afb7fd2..f350458 100644
+--- a/06_Framework/boardProject/src/main/webapp/WEB-INF/web.xml
++++ b/06_Framework/boardProject/src/main/webapp/WEB-INF/web.xml
+@@ -3,16 +3,6 @@
+ 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ 	xsi:schemaLocation="http://JAVA.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_4_0.xsd">
+ 
+-    <!-- web.xml (배포 서술자/설명서) 
+-        서버가 켜질 때(배포가 시작될 때) 가장 먼저 읽어들이는 설정 파일
+-     -->
+-
+-
+-    <!-- root-context.xml 
+-        서버가 켜질 때 web.xml이 가장 먼저 읽어들이는 파일
+-        프로젝트 전반적으로 사용될 설정, 객체(Bean)를 생성하는 용도의 파일
+-     -->
+-     
+ 	<!-- The definition of the Root Spring Container shared by all Servlets 
+ 		and Filters -->
+ 	<context-param>
+@@ -27,12 +17,6 @@
+ 	</listener>
+ 
+ 	<!-- Processes application requests -->
+-	
+-	<!-- 
+-	    DispatcherServlet(Spring에서 제공) 객체 생성 시
+-	    servlet-context.xml 파일을 이용해서 만든다
+-	 -->
+-	
+ 	<servlet>
+ 		<servlet-name>appServlet</servlet-name>
+ 		<servlet-class>org.springframework.web.servlet.DispatcherServlet
+diff --git a/practice/UIUX_concept.html b/practice/UIUX_concept.html
+index 560d526..6de85ec 100644
+--- a/practice/UIUX_concept.html
++++ b/practice/UIUX_concept.html
+@@ -48,7 +48,7 @@ container.innerHTML = ""; /* container의 값을 한번 초기화하는 함수 *
+ 
+ const count = e.target.previousElementSibling.value; /* 카운트 다음의 행동을 한다 */
+ 
+-for(let i=0 ; i<count ; i++){  /* 몇개를 만들지 입력했을때 */ /* let i=0 ; i<count ; i++ */
++for(let i=0 ; i<count ; i++){  /* 몇개를 만들지 입력했을때 */
+ 
+ const input = document.createElement("input"); /* 빈칸을 만드는 함수 */
+ 
+@@ -64,11 +64,11 @@ container.append(input); /* container로 input의 값을 삽입한다 */
+ 
+ sumBtn.addEventListener("click", ()=>{ /* 입력된 숫자를 모두 더하는 버튼을 눌렀을때 아래 함수로 행동해라 */
+ 
+-const inputArr = document.getElementsByClassName("input-number"); /* input-number 클래스 변수를 얻어옴 */ /* 여러 input-number를 얻어와야 해서 getElements */
++const inputArr = document.getElementsByClassName("input-number"); /* input-number 클래스 변수를 얻어옴 */
+ 
+ let sum = 0; /* sum 변수 선언 */
+ 
+-for(const input of inputArr){ /* ?? */ /* 그냥 of인건가 */
++for(const input of inputArr){ /* ?? */
+ 
+ sum += Number(input.value); /* 입력된 값을 모두 더하는 코드 */
+ 
+diff --git a/practice/UIarchitecture.html b/practice/UIarchitecture.html
+index db59cae..4b9d93f 100644
+--- a/practice/UIarchitecture.html
++++ b/practice/UIarchitecture.html
+@@ -90,13 +90,13 @@ overflow: hidden;
+ 
+ const panelArr = document.getElementsByClassName("panel"); /* 내용을 변수로 얻어온다 */
+ 
+-for(let panel of panelArr){ /* let panel of panelArr */
++for(let panel of panelArr){
+ 
+-panel.style.display = "none"; /* 내용을 처음 로드했을땐 안보이게 한다. */ /* none=안보이게 함, block=보이게 함 */
++panel.style.display = "none"; /* 내용을 처음 로드했을땐 안보이게 한다. */
+ 
+ }
+ 
+-const accordionArr = document.getElementsByClassName("accordion"); /* 메뉴를 변수로 얻어온다 */ /* accordion 클래스가 3개이므로 ElementsByClassName으로 받아온다 */
++const accordionArr = document.getElementsByClassName("accordion"); /* 메뉴를 변수로 얻어온다 */
+ 
+ for(let accordion of accordionArr){
+ 
+@@ -104,7 +104,7 @@ accordion.addEventListener("click", function(){ /* 메뉴를 클릭했을때 */
+ 
+ //2. 메뉴를 클릭하면 메뉴와 관련된 내용이 나타난다.
+ 
+-if(this.nextElementSibling.style.display == "none"){ /* 메뉴를 클릭했을때 내용이 없다면 */
++if(this.nextElementSibling.style.display == "none"){
+ 
+ this.nextElementSibling.style.display = "block"; /* 내용이 나타난다. */
+ 
+-- 
+2.36.0.windows.1
+
