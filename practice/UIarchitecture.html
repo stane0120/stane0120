@@ -90,13 +90,13 @@ overflow: hidden;
 
 const panelArr = document.getElementsByClassName("panel"); /* 내용을 변수로 얻어온다 */
 
-for(let panel of panelArr){
+for(let panel of panelArr){ /* let panel of panelArr */
 
-panel.style.display = "none"; /* 내용을 처음 로드했을땐 안보이게 한다. */
+panel.style.display = "none"; /* 내용을 처음 로드했을땐 안보이게 한다. */ /* none=안보이게 함, block=보이게 함 */
 
 }
 
-const accordionArr = document.getElementsByClassName("accordion"); /* 메뉴를 변수로 얻어온다 */
+const accordionArr = document.getElementsByClassName("accordion"); /* 메뉴를 변수로 얻어온다 */ /* accordion 클래스가 3개이므로 ElementsByClassName으로 받아온다 */
 
 for(let accordion of accordionArr){
 
@@ -104,7 +104,7 @@ accordion.addEventListener("click", function(){ /* 메뉴를 클릭했을때 */
 
 //2. 메뉴를 클릭하면 메뉴와 관련된 내용이 나타난다.
 
-if(this.nextElementSibling.style.display == "none"){
+if(this.nextElementSibling.style.display == "none"){ /* 메뉴를 클릭했을때 내용이 없다면 */
 
 this.nextElementSibling.style.display = "block"; /* 내용이 나타난다. */
 

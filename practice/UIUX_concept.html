@@ -48,7 +48,7 @@ container.innerHTML = ""; /* container의 값을 한번 초기화하는 함수 *
 
 const count = e.target.previousElementSibling.value; /* 카운트 다음의 행동을 한다 */
 
-for(let i=0 ; i<count ; i++){  /* 몇개를 만들지 입력했을때 */
+for(let i=0 ; i<count ; i++){  /* 몇개를 만들지 입력했을때 */ /* let i=0 ; i<count ; i++ */
 
 const input = document.createElement("input"); /* 빈칸을 만드는 함수 */
 
@@ -64,11 +64,11 @@ container.append(input); /* container로 input의 값을 삽입한다 */
 
 sumBtn.addEventListener("click", ()=>{ /* 입력된 숫자를 모두 더하는 버튼을 눌렀을때 아래 함수로 행동해라 */
 
-const inputArr = document.getElementsByClassName("input-number"); /* input-number 클래스 변수를 얻어옴 */
+const inputArr = document.getElementsByClassName("input-number"); /* input-number 클래스 변수를 얻어옴 */ /* 여러 input-number를 얻어와야 해서 getElements */
 
 let sum = 0; /* sum 변수 선언 */
 
-for(const input of inputArr){ /* ?? */
+for(const input of inputArr){ /* ?? */ /* 그냥 of인건가 */
 
 sum += Number(input.value); /* 입력된 값을 모두 더하는 코드 */
 
