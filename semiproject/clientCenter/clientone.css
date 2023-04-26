@@ -1,0 +1,29 @@
+#white{
+    border: 0.5px solid black;
+    width: 686px;
+    height: 614px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin: 200px 0px 0px 0px;
+}
+
+#write{
+    border: 0.5px solid black;
+    width: 346px;
+    height: 186px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin: 0px 0px 0px 1000px;
+}
+
+#area{
+
+
+}
+
+#java{
+
+    
+}
