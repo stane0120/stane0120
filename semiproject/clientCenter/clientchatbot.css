@@ -5,20 +5,40 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
-    margin: 500px 0 0 500px;
+    margin-top: 20px;
+    margin-right: 10px;
+    font-size: 16px;
+    color: black;
+}
 
+.title{
+    margin-top: 300px;
+    margin-left: 125px;
 }
-.content-1{ 
-    flex-basis: 70%;
-    padding: 20px;
 
-    
+.content-1{
+    width: 500.3px;
+    height: 190.02px;
+    margin-top: -865px;
+    margin-left: 600px;
 }
-.content-1 > *{
-    margin-bottom: 20px;
+
+.open{
+    background-color: #20B400;
+    width: 60px;
+    height: 60px;
+    color: white;
+    font: bold;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 600px;
+    margin-left: 1200px;
+    cursor: pointer;
 }
-.content-1 > pre{
-    font-size: 1rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+.FAQ{
+    display: none;
 }
+
+
 
