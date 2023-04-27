@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Accordion Menu</title>
+</head>
+<body>
+
+<h1>질문해보세요</h1>
+
+    <style>
+*{
+  box-sizing: border-box; 
+}
+  
+.que:first-child{
+    border-top: 1px solid black;
+  }
+  
+.que{
+  position: relative;
+  padding: 17px 0;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid #dddddd;
+  
+}
+  
+.que::before{
+  display: inline-block;
+  content: '';
+  font-size: 14px;
+  color: #006633;
+  margin: 0 5px;
+}
+
+.que.on>span{
+  font-weight: bold;
+  color: #006633; 
+}
+  
+.anw {
+  display: none;
+    overflow: hidden;
+  font-size: 14px;
+  background-color: #f4f4f2;
+  padding: 27px 0;
+}
+  
+.anw::before {
+  display: inline-block;
+  content: '';
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+  margin: 0 5px;
+}
+
+.arrow-wrap {
+  position: absolute;
+  top:50%; right: 10px;
+  transform: translate(0, -50%);
+}
+
+.que .arrow-top {
+  display: none;
+}
+.que .arrow-bottom {
+  display: block;
+}
+.que.on .arrow-bottom {
+  display: none;
+}
+.que.on .arrow-top {
+  display: block; 
+}
+
+
+
+    </style>
+
+
+<div id="Accordion_wrap">
+     <div class="que">
+      <span>신고는 어떻게 하나요</span>
+       <div class="arrow-wrap">
+         <span class="arrow-top">▲</span>
+        <span class="arrow-bottom">▼</span>
+       </div>
+      
+     </div>
+     <div class="anw">
+      <span>이렇게 하면 됩니다.</span>
+     </div>
+      <div class="que">
+      <span>청원 글 작성은 어떻게 하나요</span>
+      <div class="arrow-wrap">
+      <span class="arrow-top">▲</span>
+      <span class="arrow-bottom">▼</span>
+     </div>
+    </div>
+     <div class="anw">
+      <span>여기서 하면 됩니다.</span>
+     </div>
+      <div class="que">
+      <span>비밀번호를 잃어버렸어요</span>
+      <div class="arrow-wrap">
+        <span class="arrow-top">▲</span>
+        <span class="arrow-bottom">▼</span>
+     </div>
+    </div>
+     <div class="anw">
+      <span>잃어버린 비밀번호는 어쩔수 없어</span>
+     </div>
+</div>
+  </body>
+</html>
+    
+
+
+    <a href="#" id="but">1:1 문의</a>
+    <a href="#" id="but">문의내역</a>
+    <a href="#" id="but">챗봇</a>
+
+
+
+    <script>
+
+$(".que").click(function() {
+   $(this).next(".anw").stop().slideToggle(300);
+  $(this).toggleClass('on').siblings().removeClass('on');
+  $(this).next(".anw").siblings(".anw").slideUp(300); // 1개씩 펼치기
+});
+        
+        </script>
+
+
+</body>
+</html>
