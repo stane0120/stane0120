@@ -4,16 +4,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <title>Accordion Menu</title>
+  <title>FAQ</title>
 </head>
 <body>
 
-<h1>질문해보세요</h1>
+<h1 id="title">질문해보세요</h1>
+
+<article class="search-area">
+
+  <form action="#" method="GET"></form>
+  <input type="search" name="query" id="query" autocomplete="off">
+  <button id="searchBtn" class="fa-solid fa-magnifying-glass">검색</button>
+
+</article>
+
+<br>
+
+<button id="butt">청원</button>
+<button id="butt">신고</button>
+<button id="butt">개인정보</button>
+<button id="butt">전체</button>
+
 
     <style>
+
+body {
+    width: 960px;
+    height: 850px;
+}
+
+#title {
+  font-size: 36px;
+  position: relative; top: 400px;
+  position: relative; left: 1100px;
+}
+
+#butt{
+  position: relative; top: 400px;
+  position: relative; left: 900px;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#butt:hover{
+  background-color: #2DB400;
+}
+
 *{
   box-sizing: border-box; 
 }
+
+#searchBtn{
+  width: 100px;
+  height: 47px;
+  background-color: white;
+  color: #2DB400;
+  position: relative; top: 400px;
+  position: relative; left: 900px;
+}
+
+#query{
+  width: 500px;
+  height: 47px;
+  position: relative; top: 400px;
+  position: relative; left: 900px;
+}
+
+#butto {
+  display: inline-block;
+  width: 184px;
+  height: 150px;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  position: relative; top: 310px;
+  position: relative; left: 910px;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-radius: 5px;
+  text-align: center; 
+}
+
+
   
 .que:first-child{
     border-top: 1px solid black;
@@ -77,6 +154,13 @@
   display: block; 
 }
 
+#Accordion_wrap {
+  position: relative; top: 450px;
+  position: relative; left: 900px;
+  width: 631.4px;
+  height: 312px;
+}
+
 
 
     </style>
@@ -119,12 +203,14 @@
 </html>
     
 
+    
+<div class="but">
+    <a href="Q&A.html" id="butto">1:1 문의</a>
+    <a href="/" id="butto">문의내역</a>
+    <a href="chatbot.html" id="butto">챗봇</a>
 
-    <a href="#" id="but">1:1 문의</a>
-    <a href="#" id="but">문의내역</a>
-    <a href="#" id="but">챗봇</a>
-
-
+  </div>
+    
 
     <script>
 
@@ -133,7 +219,19 @@ $(".que").click(function() {
   $(this).toggleClass('on').siblings().removeClass('on');
   $(this).next(".anw").siblings(".anw").slideUp(300); // 1개씩 펼치기
 });
-        
+
+const buttList = document.getElementById("butt");
+
+buttList.addEventListener("click", () => {
+  for(let butt of buttList){
+  if(e.target.classList.contains("active")){
+      e.target.classList.toggle("active")
+  } else {
+    e.target.classList.add("active")
+  }
+}
+});
+
         </script>
 
 

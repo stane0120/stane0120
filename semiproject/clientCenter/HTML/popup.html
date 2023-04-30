@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1:1 문의</title>
+</head>
+<body>
+
+    <style>
+
+    #sendParent{
+        width: 150px;
+        height: 47px;
+        color: white;
+        background-color: #2DB400;
+        text-align: bottom;
+        position: absolute; top: 150px; left: 200px;
+    }
+
+    #jubsu{
+        font-size: 24px;
+        font-weight: bold;
+        position: absolute; top: 70px; left: 120px;
+    }
+
+
+    </style>
+    
+    <span id="jubsu">1:1 문의가 제출되셨습니다.</span>
+    <button id="sendParent">전달하고 창닫기</button>
+
+
+    <script>
+    sendParent.addEventListener("click", () => {
+
+        window.close();
+
+    });
+    </script>
+</body>
+</html>
