@@ -20,10 +20,15 @@
 
         // 부모창에 작성된 #parentInput의 값 얻어오기
         // opener == 부모창
-        const parentValue = opener.document.getElementById("parentInput").value;
+        const category = document.getElementById("category");
+        const moni = document.getElementById("moni");
+        const imageInput = document.getElementById("imageInput");
+
 
         // #message에 부모로 부터 얻어온 값 출력하기
-        document.querySelector("#message").innerText = parentValue;
+        document.querySelector("#message").innerText = category;
+        document.querySelector("#message").innerText = moni;
+        document.querySelector("#message").innerText = imageInput;
     
         // 부모창으로 값 전달하기
         const childInput = document.getElementById("childInput");
@@ -37,8 +42,6 @@
             opener.document.getElementById("result").value
                 = childInput.value;
             
-
-
             window.close(); // 현재 창 닫기
         });
 

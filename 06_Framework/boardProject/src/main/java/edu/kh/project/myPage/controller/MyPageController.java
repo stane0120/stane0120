@@ -171,7 +171,7 @@ public class MyPageController {
         // + 쿠키 삭제
     	
     	if(result > 0) { // 탈퇴 성공
-    		message = "탈되 되었습니다.";
+    		message = "탈퇴 되었습니다.";
     		path += "/";
     		status.setComplete();
     		Cookie cookie = new Cookie("savId", "");

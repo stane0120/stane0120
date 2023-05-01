@@ -27,7 +27,7 @@ public class LoginFilter implements Filter {
 	public void init(FilterConfig fConfig) throws ServletException {
        // 서버가 켜질 때, 필터 코드가 변경 되었을 때 필터가 생성됨
 	   // -> 생성 시 초기화 용도로 사용하는 메서드
-	   System.out.println("--- 로그인 필터 새엇ㅇ ---");
+	   System.out.println("--- 로그인 필터 생성 ---");
 	}
 	
 	public void destroy() {

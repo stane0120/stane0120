@@ -64,6 +64,7 @@ body {
   color: #2DB400;
   position: relative; top: 400px;
   position: relative; left: 900px;
+
 }
 
 #query{
@@ -71,16 +72,16 @@ body {
   height: 47px;
   position: relative; top: 400px;
   position: relative; left: 900px;
+
 }
 
 #butto {
-  display: inline-block;
   width: 184px;
   height: 150px;
   background-color: white;
   text-decoration: none;
   color: black;
-  position: relative; top: 310px;
+  position: relative; top: 500px;
   position: relative; left: 910px;
   border-top: 1px solid black;
   border-right: 1px solid black;
@@ -88,6 +89,8 @@ body {
   border-bottom: 1px solid black;
   border-radius: 5px;
   text-align: center; 
+  padding-left: 110px;
+  padding-top:  120px;
 }
 
 
@@ -161,6 +164,9 @@ body {
   height: 312px;
 }
 
+.confirm{ background-color : #2DB400; }
+.error{ background-color : white; }
+
 
 
     </style>
@@ -220,16 +226,16 @@ $(".que").click(function() {
   $(this).next(".anw").siblings(".anw").slideUp(300); // 1개씩 펼치기
 });
 
+
 const buttList = document.getElementById("butt");
 
-buttList.addEventListener("click", () => {
-  for(let butt of buttList){
-  if(e.target.classList.contains("active")){
-      e.target.classList.toggle("active")
+
+buttList.addEventListener("click", e => {
+  if(e.target.classList.contains("confirm")){
+      buttList.classList.toggle("confirm")
   } else {
-    e.target.classList.add("active")
+    buttList.classList.remove("confirm")
   }
-}
 });
 
         </script>
