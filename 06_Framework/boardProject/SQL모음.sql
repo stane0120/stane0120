@@ -125,16 +125,21 @@ SELECT MEMBER_PW FROM "MEMBER" WHERE MEMBER_NO = 1;
 -- 회원 번호가 일치하는 회원의 비밀번호 변경
 UPDATE "MEMBER" SET
 MEMBER_PW = #{memberPw}
-WHERE MEMBER_NO = #{memberNo}
+WHERE MEMBER_NO = #{memberNo};
 
 
 -- 회원 탈퇴
 UPDATE "MEMBER" SET
 MEMBER_DEL_FL = 'Y'
-WHERE MEMBER_NO = #{memberNo}
+WHERE MEMBER_NO = #{memberNo};
 
 
 
 
+
+-- 이메일 중복 검사
+SELECT COUNT(*) FROM "MEMBER"
+WHERE MEMBER_EMAIL = 'user01@kh.or.kr'
+AND MEMBER_DEL_FL = 'N';
 
 
