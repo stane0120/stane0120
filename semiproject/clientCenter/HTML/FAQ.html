@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <title>FAQ</title>
+
+  <script src="https://kit.fontawesome.com/2e01b16c9e.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
 <h1 id="title">질문해보세요</h1>
@@ -89,7 +92,7 @@ body {
   border-bottom: 1px solid black;
   border-radius: 5px;
   text-align: center; 
-  padding-left: 110px;
+  padding-left: 140px;
   padding-top:  120px;
 }
 
@@ -167,6 +170,10 @@ body {
 .confirm{ background-color : #2DB400; }
 .error{ background-color : white; }
 
+i {
+font-size: 5rem;
+position: absolute; top: 20px; right: 60px;
+}
 
 
     </style>
@@ -205,26 +212,27 @@ body {
       <span>잃어버린 비밀번호는 어쩔수 없어</span>
      </div>
 </div>
-  </body>
-</html>
-    
+  
 
     
-<div class="but">
-    <a href="Q&A.html" id="butto"><img src="">
-      1:1 문의</a>
-    <a href="/" id="butto"><img src="">
-      문의내역</a>
-    <a href="chatbot.html" id="butto"><img src="">
-      챗봇</a>
-
-  </div>
+  
     
 
-    <script>
+
+    <a href="Q&A.html" id="butto">
+     <i class="fa-solid fa-user"></i> 1:1 문의</a>
+    <a href="/" id="butto">
+      <i class="fa-solid fa-scroll"></i>문의내역</a>
+    <a href="chatbot.html" id="butto">
+      <i class="fa-regular fa-comment"></i>챗봇</a>
+
+
+  
+
+  <script>
 
 $(".que").click(function() {
-   $(this).next(".anw").stop().slideToggle(300);
+  $(this).next(".anw").stop().slideToggle(300);
   $(this).toggleClass('on').siblings().removeClass('on');
   $(this).next(".anw").siblings(".anw").slideUp(300); // 1개씩 펼치기
 });
@@ -241,7 +249,7 @@ buttList.addEventListener("click", e => {
   }
 });
 
-        </script>
+  </script>
 
 
 </body>
