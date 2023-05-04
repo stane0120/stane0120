@@ -1,256 +1,141 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <title>FAQ</title>
 
-  <script src="https://kit.fontawesome.com/2e01b16c9e.js" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="../css/FAQ.css">
 </head>
 
 <body>
 
-<h1 id="title">질문해보세요</h1>
-
-<article class="search-area">
-
-  <form action="#" method="GET"></form>
-  <input type="search" name="query" id="query" autocomplete="off">
-  <button id="searchBtn" class="fa-solid fa-magnifying-glass">검색</button>
-
-</article>
-
-<br>
-
-<button id="butt">청원</button>
-<button id="butt">신고</button>
-<button id="butt">개인정보</button>
-<button id="butt">전체</button>
-
-
-    <style>
-
-body {
-    width: 960px;
-    height: 850px;
-}
-
-#title {
-  font-size: 36px;
-  position: relative; top: 400px;
-  position: relative; left: 1100px;
-}
-
-#butt{
-  position: relative; top: 400px;
-  position: relative; left: 900px;
-  text-decoration: none;
-  color: black;
-  background-color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#butt:hover{
-  background-color: #2DB400;
-}
-
-*{
-  box-sizing: border-box; 
-}
-
-#searchBtn{
-  width: 100px;
-  height: 47px;
-  background-color: white;
-  color: #2DB400;
-  position: relative; top: 400px;
-  position: relative; left: 900px;
-
-}
-
-#query{
-  width: 500px;
-  height: 47px;
-  position: relative; top: 400px;
-  position: relative; left: 900px;
-
-}
-
-#butto {
-  width: 184px;
-  height: 150px;
-  background-color: white;
-  text-decoration: none;
-  color: black;
-  position: relative; top: 500px;
-  position: relative; left: 910px;
-  border-top: 1px solid black;
-  border-right: 1px solid black;
-  border-left: 1px solid black;
-  border-bottom: 1px solid black;
-  border-radius: 5px;
-  text-align: center; 
-  padding-left: 140px;
-  padding-top:  120px;
-}
+  <header>
+    <div class="logomenuicon">
+      <div class="logo"><img id="logoimg" src="Logo.png"></div>
+      <div class="menu">
+        <ul>
+          <li><a id="startPetitions" href="#">Start a petition</a></li>
+          <li><a id="myPetitions" href="#">My petitions</a></li>
+          <li><a id="browse" href="#">Browse</a></li>
+        </ul>
+      </div>
+      <div class="icon">
+        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+        <i class="fa-sharp fa-solid fa-user"></i>
+        <i class="fa-sharp fa-solid fa-bell"></i>
+      </div>
+    </div>
+  </header>
 
 
-  
-.que:first-child{
-    border-top: 1px solid black;
-  }
-  
-.que{
-  position: relative;
-  padding: 17px 0;
-  cursor: pointer;
-  font-size: 14px;
-  border-bottom: 1px solid #dddddd;
-  
-}
-  
-.que::before{
-  display: inline-block;
-  content: '';
-  font-size: 14px;
-  color: #006633;
-  margin: 0 5px;
-}
+  <main>
+  <h1 id="title">질문해보세요</h1>
 
-.que.on>span{
-  font-weight: bold;
-  color: #006633; 
-}
-  
-.anw {
-  display: none;
-    overflow: hidden;
-  font-size: 14px;
-  background-color: #f4f4f2;
-  padding: 27px 0;
-}
-  
-.anw::before {
-  display: inline-block;
-  content: '';
-  font-size: 14px;
-  font-weight: bold;
-  color: #666;
-  margin: 0 5px;
-}
+  <article class="search-area">
 
-.arrow-wrap {
-  position: absolute;
-  top:50%; right: 10px;
-  transform: translate(0, -50%);
-}
+    <form action="#" method="GET"></form>
+    <input type="search" name="query" id="query" autocomplete="off">
+    <button id="searchBtn" class="fa-solid fa-magnifying-glass">검색</button>
 
-.que .arrow-top {
-  display: none;
-}
-.que .arrow-bottom {
-  display: block;
-}
-.que.on .arrow-bottom {
-  display: none;
-}
-.que.on .arrow-top {
-  display: block; 
-}
+  </article>
 
-#Accordion_wrap {
-  position: relative; top: 450px;
-  position: relative; left: 900px;
-  width: 631.4px;
-  height: 312px;
-}
+  <div class="faq-category">
+  <button id="button1">청원</button>
+  <button id="button1">신고</button>
+  <button id="button1">개인정보</button>
+  <button id="button1">전체</button>
+  </div>
 
-.confirm{ background-color : #2DB400; }
-.error{ background-color : white; }
-
-i {
-font-size: 5rem;
-position: absolute; top: 20px; right: 60px;
-}
-
-
-    </style>
-
-
-<div id="Accordion_wrap">
-     <div class="que">
+  <div id="Accordion_wrap">
+    <div class="question">
       <span>신고는 어떻게 하나요</span>
-       <div class="arrow-wrap">
-         <span class="arrow-top">▲</span>
+      <div class="arrow-wrap">
+        <span class="arrow-top">▲</span>
         <span class="arrow-bottom">▼</span>
-       </div>
-      
-     </div>
-     <div class="anw">
+      </div>
+
+    </div>
+    <div class="answer">
       <span>이렇게 하면 됩니다.</span>
-     </div>
-      <div class="que">
+    </div>
+    <div class="question">
       <span>청원 글 작성은 어떻게 하나요</span>
       <div class="arrow-wrap">
-      <span class="arrow-top">▲</span>
-      <span class="arrow-bottom">▼</span>
-     </div>
+        <span class="arrow-top">▲</span>
+        <span class="arrow-bottom">▼</span>
+      </div>
     </div>
-     <div class="anw">
+    <div class="answer">
       <span>여기서 하면 됩니다.</span>
-     </div>
-      <div class="que">
+    </div>
+    <div class="question">
       <span>비밀번호를 잃어버렸어요</span>
       <div class="arrow-wrap">
         <span class="arrow-top">▲</span>
         <span class="arrow-bottom">▼</span>
-     </div>
+      </div>
     </div>
-     <div class="anw">
+    <div class="answer">
       <span>잃어버린 비밀번호는 어쩔수 없어</span>
-     </div>
-</div>
-  
+    </div>
+  </div>
 
-    
-  
-    
+  <div class="center-btn">
+  <a href="Q&A.html" id="button2"><i class="fa-solid fa-user fa-4x" id="ic"></i>1:1 문의</a>
+  <a href="Q&A2.html" id="button2"><i class="fa-solid fa-scroll fa-4x" id="ic"></i>문의내역</a>
+  <a href="chatbot.html" id="button2"><i class="fa-regular fa-comment fa-4x" id="ic"></i>챗봇</a>
+  </div>
 
+</main>
 
-    <a href="Q&A.html" id="butto">
-     <i class="fa-solid fa-user"></i> 1:1 문의</a>
-    <a href="/" id="butto">
-      <i class="fa-solid fa-scroll"></i>문의내역</a>
-    <a href="chatbot.html" id="butto">
-      <i class="fa-regular fa-comment"></i>챗봇</a>
+ <footer>
+    <div class="footerList">
+      <div>
+        <h2>COMPANY</h2>
+        <ul>
+          <li>About</li>
+          <li>Impact</li>
+          <li>Careers</li>
+          <li>Team</li>
+        </ul>
+      </div>
+      <div>
+        <h2>COMMUNITY</h2>
+        <ul>
+          <li>Blog</li>
+          <li>Community Guidelines</li>
+        </ul>
+      </div>
+      <div>
+        <h2>SUPPORT</h2>
+        <ul>
+          <li>Help</li>
+          <li>Guides</li>
+          <li>Privacy</li>
+          <li>Policies</li>
+          <li>Cookies</li>
+        </ul>
+      </div>
+      <div>
+        <h2>CONNECT</h2>
+        <ul>
+          <li>Twitter</li>
+          <li>Facebook</li>
+        </ul>
+      </div>
+    </div>
+    <div class="last">
+      <a class="admin" href="/administrator/html/main_login.html">Copyright &copy; nojo.kr</a><br>
+      <p>이 사이트는 reCAPTCHA로 보호되며 Google 개인정보 보호정책 및 서비스 약관이 적용됩니다.</p>
+    </div>
+  </footer>
 
-
-  
-
-  <script>
-
-$(".que").click(function() {
-  $(this).next(".anw").stop().slideToggle(300);
-  $(this).toggleClass('on').siblings().removeClass('on');
-  $(this).next(".anw").siblings(".anw").slideUp(300); // 1개씩 펼치기
-});
-
-
-const buttList = document.getElementById("butt");
-
-
-buttList.addEventListener("click", e => {
-  if(e.target.classList.contains("confirm")){
-      buttList.classList.toggle("confirm")
-  } else {
-    buttList.classList.remove("confirm")
-  }
-});
-
-  </script>
-
-
+  <script src="../js/FAQ.js"></script>
+  <script src="https://kit.fontawesome.com/fa1a384c97.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

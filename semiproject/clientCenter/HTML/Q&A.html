@@ -1,124 +1,72 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q&A</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q&A</title>
+
+  <link rel="stylesheet" href="../CSS/Q&A.css">
 </head>
+
 <body>
-    
-    <style>
 
-    #muni{
-        width: 150px;
-        height: 47px;
-        color: white;
-        background-color: #2DB400;
-        position: absolute; top: 1000px; left: 1100px;
-    }
-
-    #suzip{
-        font-size: 16px;
-        font-weight: bold;
-        position: absolute; top: 820px; left: 900px;
-    }
-
-    .gain{
-        font-size: 12px;
-        position: absolute; top: 870px; left: 900px;
-    }
-
-    .filename{
-        width: 619px;
-        height: 100px;
-        background-color: lightgray;
-        font-size: 12px;
-        position: absolute; top: 690px; left: 900px;
-        padding-top: 10px;
-        padding-left: 30px;
-    }
-
-    .profile-btn-area{
-        position: absolute; top: 600px; left: 900px;
-    }
-
-    #text {
-        width: 619px;
-        height: 268px;
-        position: absolute; top: 300px; left: 900px;
-    }
-
-    #moni{
-        font-size: 16px;
-        font-weight: bold;
-        position: absolute; top: 250px; left: 900px;
-    }
-
-    #category{
-        position: absolute; top: 220px; left: 900px;
-        font-weight: bold;
-        font-size: 16px;
-    }
-
-    #choice{
-        position: absolute; top: 220px; left: 990px;
-    }
-
-    #title{
-        font-weight: bold;
-        font-size: 36px;
-        position: absolute; top: 100px; left: 1090px;
-    }
-
-
-
-    </style>
-
-
-    <h1 id="title">질문해보세요</h1>
-
-    <h id="category">카테고리</h> 
-    <select name="선택" id="choice">
-        <option value="na">회원가입 문의</option>
-        <option value="ha">청원 관련 문의</option>
-        <option value="ya">개인정보 관련 문의</option>
-        <option value="ya">신고 문의</option>
-    </select>
-
-    <br>
-
-    <h id="moni">문의 내용</h><br>
-    
-    <textarea cols="2000" rows="20" id="text"></textarea>
-
-    <br><br>
-
-    <div class="profile-btn-area">
-        <label for="imageInput">파일 첨부</label><br><br>
-        
-        <input type="file" name="profileImage" id="imageInput" accept="image/*">
-
+  <header>
+    <div class="logomenuicon">
+      <div class="logo"><img id="logoimg" src="Logo.png"></div>
+      <div class="menu">
+        <ul>
+          <li><a id="startPetitions" href="#">Start a petition</a></li>
+          <li><a id="myPetitions" href="#">My petitions</a></li>
+          <li><a id="browse" href="#">Browse</a></li>
+        </ul>
+      </div>
+      <div class="icon">
+        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+        <i class="fa-sharp fa-solid fa-user"></i>
+        <i class="fa-sharp fa-solid fa-bell"></i>
+      </div>
     </div>
+  </header>
 
-    <br>
 
-    <span class="filename">
+<main>
+
+  <h1 id="title">1:1 문의</h1>
+
+  <h id="category">제목
+    <textarea cols="200" rows="20" id="text2"></textarea>
+  </h>
+  <br>
+
+  <h id="select1">문의 내용</h><br>
+
+  <textarea cols="2000" rows="20" id="text1"></textarea>
+
+  <br><br>
+
+  <div class="profile-btn-area">
+    <label for="imageInput">파일 첨부</label><br><br>
+
+    <input type="file" name="profileImage" id="imageInput" accept="image/*">
+  </div>
+
+  
+
+  <span class="filename">
     파일명은 -,_를 제외한 특수문자 허용되지 않습니다. <br>
     아래 파일 형식만 첨부할 수 있습니다 <br>
     <br>
     이미지:jpeg,jpg,gif,bmp,png <Br>
 
     문서:pdf,txt,hwp,doc,docs,xls,xlsm,ppt,pptx
-
-    </span>
-
-    <br><br><br>
+  </span>
 
 
-    
-    <h id="suzip">개인정보 수집 등(필수)</h> <br><br>
-    <span class="gain">
+  
+  <h id="suzip">개인정보 수집 등(필수)</h> <br><br>
+  <span class="suzip2">
     - 수집하는 개인정보 항목: 이메일 주소, 주소 <br><br>
 
 
@@ -126,27 +74,60 @@
     됩니다.
     이용자는 본 동의를 거부할 수 있으나, 미동의 시 문의 접수가 불가능합니다.
 
-    </span>
-
-    
-    <br><br><br><br>
-
-    <button type="sendPopup", id="muni">문의하기</button>
+  </span>
 
 
+  <br><br><br><br>
 
+  <button type="sendPopup" , id="select2">문의하기</button>
 
-    <Script>
+</main>
 
-    const muni = document.getElementById("muni");
-    muni.addEventListener("click", () => {
+  <footer>
+    <div class="footerList">
+      <div>
+        <h2>COMPANY</h2>
+        <ul>
+          <li>About</li>
+          <li>Impact</li>
+          <li>Careers</li>
+          <li>Team</li>
+        </ul>
+      </div>
+      <div>
+        <h2>COMMUNITY</h2>
+        <ul>
+          <li>Blog</li>
+          <li>Community Guidelines</li>
+        </ul>
+      </div>
+      <div>
+        <h2>SUPPORT</h2>
+        <ul>
+          <li>Help</li>
+          <li>Guides</li>
+          <li>Privacy</li>
+          <li>Policies</li>
+          <li>Cookies</li>
+        </ul>
+      </div>
+      <div>
+        <h2>CONNECT</h2>
+        <ul>
+          <li>Twitter</li>
+          <li>Facebook</li>
+        </ul>
+      </div>
+    </div>
+    <div class="last">
+      <a class="admin" href="/administrator/html/main_login.html">Copyright &copy; nojo.kr</a><br>
+      <p>이 사이트는 reCAPTCHA로 보호되며 Google 개인정보 보호정책 및 서비스 약관이 적용됩니다.</p>
+    </div>
+  </footer>
 
-        window.open("popup.html", "_blank", "popup", "width=580, height=225, top=500, left=800");
-        document.location.href='FAQ.html';
-
-    });
-
-    </Script>
+  <script src="../JS/Q&A.js"></script>
+  <script src="https://kit.fontawesome.com/fa1a384c97.js" crossorigin="anonymous"></script>
 
 </body>
+
 </html>
