@@ -1,11 +1,11 @@
 package practice;
 
-public class pracice34 {
+public class practice34 {
 	public String studentName;  // 학생 이름, 학년, 요금
 	public int grade;
 	public int money;
 	
-	public pracice34(String studentName, int money) {   // 학생 이름과 가진 돈을 매개변수로 받는 생성자
+	public practice34(String studentName, int money) {   // 학생 이름과 가진 돈을 매개변수로 받는 생성자
 		this.studentName = studentName;
 		this.money = money;
 	}

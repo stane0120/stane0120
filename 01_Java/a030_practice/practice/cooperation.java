@@ -3,8 +3,8 @@ package practice;
 public class cooperation {
 	public static void main(String[] args) {
 		
-		pracice34 studentJames = new pracice34("James", 5000);
-		pracice34 studentTomas = new pracice34("Tomas", 10000);   // 학생 생성
+		practice34 studentJames = new practice34("James", 5000);
+		practice34 studentTomas = new practice34("Tomas", 10000);   // 학생 생성
 		
 		Bus bus100 = new Bus(100);
 		studentJames.takeBus(bus100);

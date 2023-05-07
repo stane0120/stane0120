@@ -35,7 +35,7 @@ left: -5px;
   cursor: pointer;
 }
 
-#butt:hover {
+#button1:hover {
   background-color: #2DB400;
 }
 
@@ -126,6 +126,7 @@ left: -5px;
 
 .question .arrow-bottom {
   display: block;
+  position: relative; left: 600px;
 }
 
 .question.on .arrow-bottom {
@@ -134,6 +135,7 @@ left: -5px;
 
 .question.on .arrow-top {
   display: block;
+  position: relative; left: 600px;
 }
 
 #Accordion_wrap {
