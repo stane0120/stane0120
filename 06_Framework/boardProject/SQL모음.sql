@@ -589,9 +589,10 @@ ORDER BY BOARD_NO DESC
 		
 		<result property="thumbnail" column="THUMBNAIL"/>
 		
-	</resultMap>
+	</resultMap>;
 
 
+SELECT * FROM "BOARD";
 
 
 
