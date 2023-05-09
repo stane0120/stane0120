@@ -1,0 +1,51 @@
+/** 로그인(회원 정보 조회)
+* @param conn
+* @param inputEmail
+* @param inputPw
+* @return loginMember
+* @throws Exception
+*/
+public Member login(Connection conn, String inputEmail, String inputPw) throws Exception{
+   
+   Member loginMember = null; // loginMember 변수선언/객체 생성 생성
+   
+   
+   try {
+
+    // sql 작성 후 수행
+       String sql = prop.getProperty("login");
+       
+       // PreaparedStatement 객체를 생성하고 SQL을 담아둠
+       pstmt = conn.prepareStatement(sql);
+       
+       // placeholder에 알맞은 값 대입
+       pstmt.setString(1, inputEmail);
+       pstmt.setString(2, inputPw);
+       
+       rs = pstmt.executeQuery(); // SELECT 수행 후 결과반환 받기
+       
+
+       // 3. 조회 결과를 1행씩 접근해서 받아온다.
+       if(rs.next()) {
+           
+           loginMember = new Member();
+           
+           loginMember.setMemberNo      ( rs.getInt(1) );
+           loginMember.setMemberEmail   ( rs.getString(2) );
+           loginMember.setMemberNickname( rs.getString(3) );
+           loginMember.setMemberTel     ( rs.getString(4) );
+           loginMember.setMemberAddress ( rs.getString(5) );
+           loginMember.setProfileImage  ( rs.getString(6) );
+           loginMember.setAuthority     ( rs.getInt(7) );
+           loginMember.setEnrollDate    ( rs.getString(8));
+           
+       }
+       
+   } finally { // 사용한 JDBC 객체 자원 반환
+       close(rs);
+       close(pstmt);
+               
+   }
+   // 결과 반환
+   return loginMember;
+}

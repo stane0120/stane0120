@@ -1,0 +1,36 @@
+package edu.kh.project.member.model.service;
+
+import static edu.kh.project.common.JDBCTemplate.*;
+
+import java.sql.Connection;
+import java.util.List;
+
+import edu.kh.project.common.JDBCTemplate;
+import edu.kh.project.member.model.dao.MemberDAO;
+import edu.kh.project.member.model.dto.Member;
+
+public class MemberService { // 컨트롤러에서 이메일과 비밀번호 값이 던져지는 클래스
+	
+	private MemberDAO dao = new MemberDAO(); // DAO 클래스를 호출한다.
+
+	/** 로그인 서비스
+	 * @param inputEmail
+	 * @param inputPw
+	 * @return loginMember
+	 * @throws Exception
+	 */
+	public Member login(String inputEmail, String inputPw) throws Exception { // DAO로 값을 던짐
+		
+        // Connection 생성
+		Connection conn = getConnection();
+		
+		Member loginMember = dao.login(conn, inputEmail, inputPw); // DAO 호출
+		
+        // 3. Connection 반환
+		close(conn);
+		
+        // 결과 반환
+		return loginMember; // 로그인멤버로 리턴
+	}
+
+}
