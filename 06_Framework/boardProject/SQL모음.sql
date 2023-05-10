@@ -679,6 +679,23 @@ ORDER BY IMG_ORDER ;
 SELECT COUNT(*) FROM "BOARD_LIKE"
 WHERE BOARD_NO = 3498 -- 게시글 번호
 AND MEMBER_NO = 2 -- 로그인 회원 번호
+;
 
 
 
+
+-- 좋아요 테이블 삽입
+INSERT INTO "BOARD_LIKE"
+VALUES (3498, 2);
+
+-- 좋아요 테이블 삭제
+DELETE FROM "BOARD_LIKE"
+WHERE BOARD_NO = 3498
+AND MEMBER_NO = 2;
+
+-- 좋아요 개수 조회
+ SELECT COUNT(*) FROM "BOARD_LIKE" WHERE BOARD_NO = #{boardNo}
+ ;
+ROLLBACK;
+ 
+ 
