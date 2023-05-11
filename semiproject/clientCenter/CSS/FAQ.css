@@ -11,10 +11,11 @@ main {
 }
 
 .faq-category {
-  display: flex;
-  justify-content: flex-start;
+  display: inline-block;
+  justify-content: space-around;
   padding-top: 15px;
-  padding-right: 490px;
+  padding-right: 450px;
+
 }
 
 .center-btn {
@@ -69,6 +70,7 @@ left: -5px;
   border-radius: 5px;
   text-align: center;
   margin-bottom: 120px;
+  position: relative; top: -30px;
 }
 
 

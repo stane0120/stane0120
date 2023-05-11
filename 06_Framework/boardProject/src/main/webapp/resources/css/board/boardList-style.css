@@ -55,10 +55,10 @@ a:hover {
 .list-table tr > *:nth-of-type(1){ width: 10%; }
 
 .list-table tr > td:nth-of-type(2){
-     width: 50%; 
-     text-align: left;
-     padding-left: 50px;
-     text-decoration: none;
+    width: 50%; 
+    text-align: left;
+    padding-left: 50px;
+    text-decoration: none;
 }
 
 .list-table tr > *:nth-of-type(3){ width: 13%; }
@@ -77,18 +77,14 @@ a:hover {
 
 .btn-area > button{
     margin-right: 50px;
-    
     width: 80px;
     height: 40px;   
     background-color: white;
-
     font-weight: bold;
     color: #455ba8;
     border: 2px solid #455ba8;
     border-radius: 5px;
-
     cursor: pointer;
-
 }
 
 
@@ -194,14 +190,14 @@ a:hover {
     animation-name: show;
     animation-duration: 0.5s;
     z-index: 500;
-  }
+}
 
 .modal.hide{
     animation-name: hide;
     animation-duration: 0.5s;
 }
 
-  
+
 #modalImage {
     background-color: white;
     margin: auto;
@@ -222,7 +218,7 @@ a:hover {
     to {opacity: 0;}
 }
 
- 
+
 /* 닫기 버튼 꾸미기 */
 #modalClose {
     position: absolute;
