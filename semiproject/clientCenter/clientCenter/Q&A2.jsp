@@ -1,10 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q&A</title>
+    <title>Q&A2</title>
 
     <link rel="stylesheet" href="../css/Q&A2.css">
 </head>
@@ -13,7 +16,7 @@
   
     <header>
         <div class="logomenuicon">
-          <div class="logo"><img id="logoimg" src="Logo.png"></div>
+          <div class="logo"><img id="logoimg" src="voteLogo2.png"></div>
           <div class="menu">
             <ul>
               <li><a id="startPetitions" href="#">Start a petition</a></li>
@@ -78,7 +81,7 @@
         <tr>
           <td>1</td>
           <td>분류</td>
-          <td href="https://www.naver.com">제목</td>
+          <td>제목</td>
           <td>답변여부</td>
           <td>작성일</td>
         </tr>
