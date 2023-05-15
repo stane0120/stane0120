@@ -27,9 +27,7 @@
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
     <main>
-        <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-
-        
+    
         <section class="board-list">
 
             <h1 class="board-name">${boardName}</h1>
