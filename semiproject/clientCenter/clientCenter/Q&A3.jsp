@@ -58,12 +58,11 @@
                     
                     <thead>
                         <tr>
-                            <th>글번호</th>
+                            <th></th>
+                            <th>분류</th>
                             <th>제목</th>
-                            <th>작성자</th>
+                            <th>답변여부</th>
                             <th>작성일</th>
-                            <th>조회수</th>
-                            <th>좋아요</th>
                         </tr>
                     </thead>
 

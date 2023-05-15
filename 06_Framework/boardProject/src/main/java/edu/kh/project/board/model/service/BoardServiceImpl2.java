@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
-import edu.kh.project.board.model.service.dao.BoardDAO2;
+import edu.kh.project.board.model.dao.BoardDAO2;
 import edu.kh.project.board.model.dto.Board;
 import edu.kh.project.board.model.dto.BoardImage;
 import edu.kh.project.board.model.exception.FileUploadException;

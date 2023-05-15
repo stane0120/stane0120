@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import edu.kh.project.board.model.dto.Board;
 import edu.kh.project.board.model.dto.Pagination;
-import edu.kh.project.board.model.service.dao.BoardDAO;
+import edu.kh.project.board.model.dao.BoardDAO;
 
 @Service
 public class BoardServiceImpl implements BoardService{

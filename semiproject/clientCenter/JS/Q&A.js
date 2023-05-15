@@ -36,3 +36,31 @@ mheight.width = width + "px";
 frame.height = height + 100 + "px";
 frame.width = width + 100 + "px"
 }
+
+const boardUpdateFrm = document.querySelector("#boardUpdateFrm");
+const boardTitle = document.querySelector("[name='boardTitle']");
+const boardContent = document.querySelector("[name='boardContent']");
+
+boardUpdateFrm.addEventListener('submit', e => {
+
+    if(boardTitle.value.trim().length == 0){
+        alert("제목을 입력해주세요")
+        boardTitle.value = "";
+        boardTitle.focus();
+        e.preventDefault(); // form 기본 이벤트 제거
+        return;
+    }
+
+    if(boardContent.value.trim().length == 0){
+        alert("내용을 입력해주세요")
+        boardContent.value = "";
+        boardContent.focus();
+        e.preventDefault(); // form 기본 이벤트 제거
+        return;
+    }
+
+document.querySelector("[name='deleteList']").value 
+=  Array.from(deleteSet);
+
+//e.preventDefault(); // 확인만하고 지울 예정
+});

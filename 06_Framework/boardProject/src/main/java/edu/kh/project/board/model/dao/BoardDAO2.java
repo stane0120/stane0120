@@ -1,4 +1,4 @@
-package edu.kh.project.board.model.service.dao;
+package edu.kh.project.board.model.dao;
 
 import java.util.HashMap;
 import java.util.List;
@@ -72,6 +72,11 @@ public class BoardDAO2 {
 			return sqlSession.insert("boardMapper.imageInsert", img);
 		}
 
+		/** 게시글 삭제 
+		 * @param boardCode
+		 * @param boardNo
+		 * @return result
+		 */
 		public int boardDelete(int boardCode, int boardNo) {
 			Map<String, Object> map = new HashMap<String, Object>();
 			

@@ -36,16 +36,20 @@
 
 <main>
 
+    <form action="update" method="POST" 
+    class="board-write" id="boardUpdateFrm" enctype="multipart/form-data">  
+
   <h1 id="title">1:1 문의</h1>
 
-  <h id="category">제목
-    <textarea cols="200" rows="20" id="text2"></textarea>
-  </h>
+    <h1 class="board-title">
+      <input type="text" name="boardTitle" placeholder="제목" value="${board.boardTitle}">   
+    </h1>
+
   <br>
 
-  <h id="select1">문의 내용</h><br>
-
-  <textarea cols="2000" rows="20" id="text1"></textarea>
+    <div class="board-content">내용
+      <textarea name="boardContent">${board.boardContent}</textarea>
+    </div>
 
   <br><br>
 
@@ -82,7 +86,7 @@
 
   <br><br><br><br>
 
-  <button type="sendPopup" , id="select2">문의하기</button>
+  <button type="submit" , id="select2">문의하기</button>
 
 </main>
 

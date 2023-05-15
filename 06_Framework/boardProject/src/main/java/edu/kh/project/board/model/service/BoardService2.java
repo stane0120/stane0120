@@ -34,7 +34,7 @@ public interface BoardService2 {
 	/** 게시글 삭제 서비스
 	 * @param boardCode
 	 * @param boardNo
-	 * @return 
+	 * @return result
 	 */
 	int boardDelete(int boardCode, int boardNo);
 }

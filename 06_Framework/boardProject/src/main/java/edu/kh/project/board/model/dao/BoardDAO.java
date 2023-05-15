@@ -1,4 +1,4 @@
-package edu.kh.project.board.model.service.dao;
+package edu.kh.project.board.model.dao;
 
 import java.util.List;
 import java.util.Map;

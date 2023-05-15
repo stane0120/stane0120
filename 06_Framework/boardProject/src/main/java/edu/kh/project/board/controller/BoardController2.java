@@ -181,7 +181,6 @@ public class BoardController2 {
 	// 게시글 삭제
 	@GetMapping("/{boardCode}/{boardNo}/delete")
 	public String boardDelete(		
-		// @PathVariable = URL
 		@PathVariable("boardCode") int boardCode       
 	   ,@PathVariable("boardNo") int boardNo
 	   ,RedirectAttributes ra) {
