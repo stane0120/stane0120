@@ -24,25 +24,7 @@
 
 </head>
 <body>
-
-    <header>
-        <div class="logomenuicon">
-          <div class="logo"><img id="logoimg" src="voteLogo2.png"></div>
-          <div class="menu">
-            <ul>
-              <li><a id="startPetitions" href="#">Start a petition</a></li>
-              <li><a id="myPetitions" href="#">My petitions</a></li>
-              <li><a id="browse" href="#">Browse</a></li>
-            </ul>
-          </div>
-          <div class="icon">
-            <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
-            <i class="fa-sharp fa-solid fa-user"></i>
-            <i class="fa-sharp fa-solid fa-bell"></i>
-          </div>
-        </div>
-      </header>
-    
+<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
     <main>
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
@@ -178,57 +160,14 @@
 
         </section>
     </main>
-    
-    <footer>
-        <div class="footerList">
-          <div>
-            <h2>COMPANY</h2>
-            <ul>
-              <li>About</li>
-              <li>Impact</li>
-              <li>Careers</li>
-              <li>Team</li>
-            </ul>
-          </div>
-          <div>
-            <h2>COMMUNITY</h2>
-            <ul>
-              <li>Blog</li>
-              <li>Community Guidelines</li>
-            </ul>
-          </div>
-          <div>
-            <h2>SUPPORT</h2>
-            <ul>
-              <li>Help</li>
-              <li>Guides</li>
-              <li>Privacy</li>
-              <li>Policies</li>
-              <li>Cookies</li>
-            </ul>
-          </div>
-          <div>
-            <h2>CONNECT</h2>
-            <ul>
-              <li>Twitter</li>
-              <li>Facebook</li>
-            </ul>
-          </div>
-        </div>
-        <div class="last">
-          <a class="admin" href="/administrator/html/main_login.html">Copyright &copy; nojo.kr</a><br>
-          <p>이 사이트는 reCAPTCHA로 보호되며 Google 개인정보 보호정책 및 서비스 약관이 적용됩니다.</p>
-        </div>
-      </footer>
-    
+
     <!-- 썸네일 클릭 시 모달창 출력 -->
     <div class="modal">
         <span id="modalClose">&times;</span>
         <img id="modalImage" src="/resources/images/user.png">
     </div>
-
-
-
+    
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 <script src="../js/Q&A3.js"></script>
 <script src="https://kit.fontawesome.com/fa1a384c97.js" crossorigin="anonymous"></script>
 </body>
