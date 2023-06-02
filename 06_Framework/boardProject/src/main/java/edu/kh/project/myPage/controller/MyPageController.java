@@ -143,7 +143,7 @@ public class MyPageController {
     	return path;
     }
     
-    // 회원 탈퇴d
+    // 회원 탈퇴
     @PostMapping("/secession")
     public String secession(String memberPw , @SessionAttribute("loginMember") Member loginMember
     		                , SessionStatus status
