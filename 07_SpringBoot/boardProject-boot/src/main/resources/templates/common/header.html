@@ -57,20 +57,28 @@
 
     </section>
 
-
-    <section></section>
-
+    <!-- <span th:text="${session.loginMember != null}">로그인 회원 정보</span> -->
 
     <!-- 우측 상단 드롭다운 메뉴 -->
     <div class="header-top-menu">
 
-        <!-- 로그인 X -->
+    <!-- 로그인 X -->
+    <th:block th:if="${session.loginMember == null}">
         <a th:href="@{/}">메인 페이지</a> | <a th:href="@{/member/login}">로그인</a>
+    </th:block>
 
     <!-- 로그인 O -->
-    <label for="headerMenuToggle">
-    ${loginMember.memberNickname} <i class="fa-solid fa-caret-down"></i>
-    </label>
+    <th:block th:unless="${session.loginMember == null}">
+        <label for="headerMenuToggle">
+            
+            <!-- <th:block th:text="${session.loginMember.memberNickname}">로그인 회원의 닉네임</th:block> -->
+
+            [[${session.loginMember.memberNickname}]]
+            
+            <i class="fa-solid fa-caret-down"></i>
+        </label>
+    </th:block> 
+
     <input type="checkbox" id="headerMenuToggle">
     <div class="header-menu">
     <a th:href="@{/myPage/info}">내정보</a>
