@@ -127,7 +127,7 @@
 
                     
                     <!-- 로그인 O -->
-                    <th:block th:if="${session.loginMember}">
+                    <th:block th:if="${session.loginMember != null}">
                         <article class="login-area">
                         
                             <a th:href="@{/myPage/profile}">
@@ -135,7 +135,9 @@
 
                         <img th:src="@{/images/user.png}" id="memberProfile">
 
-                        <!-- 프로필 이미지가 있으면 기본 이미지 -->   
+                        <!-- 프로필 이미지가 있으면 기본 이미지 -->  
+                        <th:block th:unless="${session.loginMember != null}">
+                            <img th:src="${session.profileImg}" id="memberProfile">
 
                             </a>
 
