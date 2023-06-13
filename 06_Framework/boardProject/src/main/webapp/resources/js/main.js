@@ -198,7 +198,7 @@ btn3.addEventListener("click", () => {
 // 웹소켓 테스트
 // 1. SockJS 라이브러리 추가
 
-// 2. SockJS를 이용해서 클라이언트용 웹소켓 객체 새엇ㅇ
+// 2. SockJS를 이용해서 클라이언트용 웹소켓 객체 생성
 let testSock = new SockJS("/testSock");
 
 function sendMessage(name, str){

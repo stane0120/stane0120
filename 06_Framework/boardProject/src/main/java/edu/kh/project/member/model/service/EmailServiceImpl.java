@@ -26,6 +26,8 @@ public class EmailServiceImpl implements EmailService {
     private String fromEmail = "jim012111@gmail.com";
     private String fromUsername = "수업용프로젝트";
 
+    
+    
     @Override
     public String createAuthKey() {
         String key = "";
@@ -55,6 +57,8 @@ public class EmailServiceImpl implements EmailService {
         return key;
     }
 
+    
+    
     @Transactional
     @Override
     public int signUp(String email, String title) {
