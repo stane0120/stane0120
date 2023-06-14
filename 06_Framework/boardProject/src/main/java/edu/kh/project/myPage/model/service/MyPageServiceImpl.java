@@ -2,14 +2,11 @@ package edu.kh.project.myPage.model.service;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
-
 import edu.kh.project.common.utility.util;
 import edu.kh.project.member.model.dto.Member;
 import edu.kh.project.myPage.model.dao.MyPageDAO;
