@@ -339,6 +339,13 @@ COMMIT;
 
 DROP TABLE "TAG";
 
+COMMIT;
+
+SELECT * 
+FROM MEMBER;
+
+DELETE FROM "MEMBER"
+WHERE MEMBER_NO = '71';
 
 
 CREATE TABLE "TAG" (
@@ -366,14 +373,6 @@ SELECT * FROM TAG;
 
 COMMENT ON COLUMN "TAG"."TAG_NO"      IS '태그번호(SEQ_TAG_NO)';
 COMMENT ON COLUMN "TAG"."TAG_CONTECT" IS '태그내용';
-
-
-
-
-
-
-
-
 
 
 ----------------여행게시판(국가)---------------------------------------------
