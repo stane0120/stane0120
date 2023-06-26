@@ -22,7 +22,7 @@ import edu.kh.project.member.model.dto.Member;
 
 @SessionAttributes({"loginMember"})
 @Controller
-public class ChattigContreller {
+public class ChattingController {
     
     @Autowired
     private ChattingService service;
