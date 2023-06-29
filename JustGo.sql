@@ -376,6 +376,13 @@ COMMENT ON COLUMN "TAG"."TAG_CONTECT" IS '태그내용';
 
 ----------------여행게시판(국가)---------------------------------------------
 
+COMMIT;
+
+SELECT * 
+FROM BOARD_TYPE;
+
+DELETE FROM BOARD
+WHERE BOARD_NO = '320';
 
 
 DROP TABLE "COUNTRY";
