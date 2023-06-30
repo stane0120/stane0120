@@ -5,6 +5,8 @@ import './App.css';
 import Ex1 from './components/Exam1';
 import Ex2 from './components/Exam2';
 
+import PropsEx from './components/R01_props';
+
 function App() {
   // 리액트의 컴포넌트는 딱 하나의 요소만을 반환할 수 있다.
   // -> 여러 요소를 반환하고 싶을 때는 부모 요소로 묶어준다!
@@ -16,8 +18,13 @@ function App() {
     <h1>Hello react!!</h1>
     <div>와 리액트다</div>
 
-    <Ex1 />
-    <Ex2 />
+    {/* <Ex1 /> */}
+    {/* <Ex2 /> */}
+
+    <PropsEx name = {'피닉스'}/>
+    <PropsEx name = {'제트'}/>
+    <PropsEx name = {'브리치'}/>
+
     </>
   );
 }
