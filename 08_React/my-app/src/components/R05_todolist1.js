@@ -29,7 +29,7 @@ const TodoList1 = () => {
     // -> 상태가 변하면 컴포넌트(TodoList1)을 리렌더링 한다.
     const [todos, setTodos] = useState([
         {text : '프로젝트', completed : false},
-        {text : '점심 먹기', completed : false}
+        {text : '점심먹기', completed : false}
     ]);
 
     console.log(todos)
