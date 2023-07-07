@@ -63,11 +63,11 @@ const SignupContainer = () => {
         fetch("/signup", {
             method : "POST",
             headers : {
-                "Content_Type" : "application/json"
+                "Content-Type" : "application/json"
             },
             body : JSON.stringify({
                 id : id, 
-                pw : pwCheck,
+                pw : pw,
                 name : name 
             })
         })
