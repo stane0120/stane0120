@@ -1,0 +1,22 @@
+#root{ text-align: center;}
+
+.button1{
+  background-color : cyan;
+  border-radius: 5px;
+}
+
+.button2{
+  background-color : magenta;
+  border-radius: 5px;
+}
+
+.NumberLine{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name{
+  border-width: 80%;
+  border: 1px;
+}
