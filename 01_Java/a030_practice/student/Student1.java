@@ -1,4 +1,4 @@
-package practice;
+package student;
 
 public class Student1 {
 	public static int serialNum = 1000;

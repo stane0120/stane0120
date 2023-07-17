@@ -1,4 +1,4 @@
-package practice;
+package computer;
 
 public abstract class computer {
 	public abstract void display();

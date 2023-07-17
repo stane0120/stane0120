@@ -1,4 +1,4 @@
-package practice;
+package computer;
 
 public abstract class Notebook extends computer{ // display 하나만 구현
 
