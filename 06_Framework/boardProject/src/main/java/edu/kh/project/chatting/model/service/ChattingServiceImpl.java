@@ -52,7 +52,8 @@ public class ChattingServiceImpl implements ChattingService{
         List<Message> messageList = dao.selectMessageList(  Integer.parseInt( String.valueOf(paramMap.get("chattingNo") )));
         
         if(!messageList.isEmpty()) {
-            int result = dao.updateReadFlag(paramMap);
+            @SuppressWarnings("unused")
+			int result = dao.updateReadFlag(paramMap);
         }
         return messageList;
     }

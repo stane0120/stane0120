@@ -1,5 +1,6 @@
 package edu.kh.project.board.model.exception;
 
+@SuppressWarnings("serial")
 public class ImageDeleteException extends RuntimeException{
 	public ImageDeleteException() {
 		super("이미지 삭제 실패");

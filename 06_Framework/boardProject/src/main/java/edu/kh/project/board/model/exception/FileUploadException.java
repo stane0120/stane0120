@@ -12,6 +12,7 @@ package edu.kh.project.board.model.exception;
 
 // 예외 처리 : try-catch / throws
 
+@SuppressWarnings("serial")
 public class FileUploadException extends RuntimeException{
 	
 	public FileUploadException() {
